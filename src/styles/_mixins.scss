@@ -1,0 +1,22 @@
+@mixin min-max($min-width, $max-width) {
+  min-width: $min-width;
+  max-width: $max-width;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@mixin btn($bd-color, $bg-color, $bdrs, $color, $font-size, $p-top, $p-bottom) {
+  border: 1px solid $bd-color;
+  background-color: $bg-color;
+  border-radius: $bdrs;
+  color: $color;
+  font-size: $font-size;
+  padding: $p-top $p-bottom;
+  cursor: pointer;
+}
+
+@mixin smallDeviceSize {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}

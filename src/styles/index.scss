@@ -1,0 +1,13 @@
+/* 
+cd animal-shelter  
+sass --watch src/styles/index.scss src/index.css
+ */
+
+@charset "UTF-8";
+
+@import 'reset';
+@import 'mixins';
+@import 'variables';
+@import 'core';
+@import 'fonts';
+@import './blocks/header.scss';
