@@ -1,80 +1,74 @@
-.main-title {
-    font-weight: 500;
-    font-size: 2rem;
-    line-height: 2.625rem;
-    max-width: 1000px;
-    text-align: center;
-    margin: 50px auto 40px;
-  }
-  .pink {
-    color: $title-pink;
-  }
-  .pets-section {
-  }
-  
-  .pets-section__filter-cont {
+.pets-section {
+  // Родительский блок для всех элементов внутри секции
+
+  &__filter-cont {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
   }
-  .pets-section__type-filter {
+
+  &__type-filter {
     display: flex;
     gap: 40px;
   }
-  .pets-section__type-filter-item {
+
+  &__type-filter-item {
     line-height: 1.2rem;
     cursor: pointer;
   }
-  .pets-section__type-filter-item--active {
+
+  &__type-filter-item--active {
     text-decoration: underline;
   }
-  .pets-section__filter-button {
+
+  &__filter-button {
+    // Пустой стиль, можно использовать для будущих изменений
   }
-  
-  .pets-section__pets-list {
+
+  &__pets-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Всегда 3 колонки */
+    grid-template-columns: repeat(3, 1fr); // Всегда 3 колонки
     gap: 30px 45px;
   }
-  
-  .pets-section__pet-item {
+
+  &__pet-item {
     max-width: 100%;
     cursor: pointer;
   }
-  
-  .pets-section__pet-img {
+
+  &__pet-img {
     margin-bottom: 20px;
   }
-  
-  .pets-section__pet-info-cont {
+
+  &__pet-info-cont {
     display: flex;
     justify-content: space-between;
     margin-bottom: 14px;
   }
-  
-  .pets-section__pet-name-age-cont {
+
+  &__pet-name-age-cont {
     display: flex;
     gap: 15px;
   }
-  
-  .pets-section__pet-name {
+
+  &__pet-name {
     font-size: 2rem;
     line-height: 2.4rem;
     margin-top: auto;
   }
-  
-  .pets-section__pet-age {
+
+  &__pet-age {
     line-height: 1.375rem;
     font-weight: 500;
     margin-top: auto;
   }
-  
-  .pets-section__pet-sex {
-    
+
+  &__pet-sex {
+    // Пустой стиль, можно использовать для будущих изменений
   }
-  
-  .pets-section__pet-description {
+
+  &__pet-description {
     line-height: 1.375rem;
     font-weight: 300;
   }
-  
+}

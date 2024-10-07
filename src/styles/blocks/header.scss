@@ -9,11 +9,12 @@
 
         &__logo-cont {
             display: flex;
+            align-items: center;
             gap: 12px;
         }
 
         &__logo-img {
-            max-width: 56.27px;
+            width: 56.27px;
             max-height: auto;
         }
 
