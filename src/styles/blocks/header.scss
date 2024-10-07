@@ -19,7 +19,12 @@
 
         &__logo-name {
             font-size: 1.5rem;
+            line-height: 1.8rem;
             margin-bottom: 4px;
+        }
+        &__logo-description{
+            line-height: 1.2rem;
+
         }
 
         &__nav {
@@ -28,6 +33,7 @@
 
             &-link {
                 font-size: 0.875rem;
+                line-height: 1.05rem;
                 white-space: nowrap;
 
                 &--active {

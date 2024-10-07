@@ -10,4 +10,6 @@ sass --watch src/styles/index.scss src/index.css
 @import 'variables';
 @import 'core';
 @import 'fonts';
+
 @import './blocks/header.scss';
+@import './blocks/pet-list-section.scss';

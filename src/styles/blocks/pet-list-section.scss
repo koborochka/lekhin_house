@@ -1,0 +1,80 @@
+.main-title {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.625rem;
+    max-width: 1000px;
+    text-align: center;
+    margin: 50px auto 40px;
+  }
+  .pink {
+    color: $title-pink;
+  }
+  .pets-section {
+  }
+  
+  .pets-section__filter-cont {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  .pets-section__type-filter {
+    display: flex;
+    gap: 40px;
+  }
+  .pets-section__type-filter-item {
+    line-height: 1.2rem;
+    cursor: pointer;
+  }
+  .pets-section__type-filter-item--active {
+    text-decoration: underline;
+  }
+  .pets-section__filter-button {
+  }
+  
+  .pets-section__pets-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Всегда 3 колонки */
+    gap: 30px 45px;
+  }
+  
+  .pets-section__pet-item {
+    max-width: 100%;
+    cursor: pointer;
+  }
+  
+  .pets-section__pet-img {
+    margin-bottom: 20px;
+  }
+  
+  .pets-section__pet-info-cont {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  
+  .pets-section__pet-name-age-cont {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .pets-section__pet-name {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin-top: auto;
+  }
+  
+  .pets-section__pet-age {
+    line-height: 1.375rem;
+    font-weight: 500;
+    margin-top: auto;
+  }
+  
+  .pets-section__pet-sex {
+    
+  }
+  
+  .pets-section__pet-description {
+    line-height: 1.375rem;
+    font-weight: 300;
+  }
+  

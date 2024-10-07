@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
 cd animal-shelter  
 sass --watch src/styles/index.scss src/index.css
@@ -123,7 +124,11 @@ img {
 }
 .main-header .header-cont__logo-name {
   font-size: 1.5rem;
+  line-height: 1.8rem;
   margin-bottom: 4px;
+}
+.main-header .header-cont__logo-description {
+  line-height: 1.2rem;
 }
 .main-header .header-cont__nav {
   display: flex;
@@ -131,6 +136,7 @@ img {
 }
 .main-header .header-cont__nav-link {
   font-size: 0.875rem;
+  line-height: 1.05rem;
   white-space: nowrap;
 }
 .main-header .header-cont__nav-link--active {
@@ -141,6 +147,82 @@ img {
   color: white;
   padding: 0.625rem 1.875rem;
   border-radius: 20px;
+}
+
+.main-title {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.625rem;
+  max-width: 1000px;
+  text-align: center;
+  margin: 50px auto 40px;
+}
+
+.pink {
+  color: #EB6CA9;
+}
+
+.pets-section__filter-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.pets-section__type-filter {
+  display: flex;
+  gap: 40px;
+}
+
+.pets-section__type-filter-item {
+  line-height: 1.2rem;
+  cursor: pointer;
+}
+
+.pets-section__type-filter-item--active {
+  text-decoration: underline;
+}
+
+.pets-section__pets-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Всегда 3 колонки */
+  gap: 30px 45px;
+}
+
+.pets-section__pet-item {
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.pets-section__pet-img {
+  margin-bottom: 20px;
+}
+
+.pets-section__pet-info-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.pets-section__pet-name-age-cont {
+  display: flex;
+  gap: 15px;
+}
+
+.pets-section__pet-name {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin-top: auto;
+}
+
+.pets-section__pet-age {
+  line-height: 1.375rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.pets-section__pet-description {
+  line-height: 1.375rem;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=index.css.map */
