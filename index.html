@@ -21,7 +21,7 @@
           </div>
         </a>
 
-        <nav>
+        <nav class="header-cont__nav-cont">
           <ul class="header-cont__nav">
             <li><a href="" class="header-cont__nav-link">Наш приют</a></li>
             <li
@@ -45,10 +45,73 @@
       </div>
     </header>
     <main>
-      <h1 class="main-title"
-        >Все животные привиты, стерильны, чипированы и готовы
-        <span class="pink">обрести семью</span></h1
-      >
+      <h1 class="main-title">Все животные привиты, стерильны, чипированы и готовы
+        <span class="pink">обрести семью</span></h1>
+
+      <section class="pet-card-section wrap">
+        
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="">Главная</a></li>
+            <li class="breadcrumb__item"><a href="">Взять питомца</a></li>
+            <li class="breadcrumb__item" aria-current="page">Мару</li>
+          </ol>
+        </nav>
+
+        <div class="pet-card">
+          <div class="pet-card__description">
+            <p class="pet-card__name">Мару</p>
+            <ul class="pet-card__info">
+              <li class="pet-card__info-item">
+                <p class="pet-card__info-title">Порода</p>
+                <p class="pet-card__info-value" id="pet-card__breed">Метис</p>
+              </li>
+              <li class="pet-card__info-item">
+                <p class="pet-card__info-title">Пол</p>
+                <p class="pet-card__info-value" id="pet-card__gender">Женский</p>
+              </li>
+              <li class="pet-card__info-item">
+                <p class="pet-card__info-title">Возраст</p>
+                <p class="pet-card__info-value" id="pet-card__age">7 лет</p>
+              </li>
+            </ul>
+            <button class="pet-card__shelter-button">Приютить</button>
+          </div>
+          <div class="pet-card__gallery">
+            <img class="pet-card__main-photo" src="src/assets/imgs/maru.jpg" alt="">
+            <ul class="pet-card__slider">
+              <li class="pet-card__slider-item pet-card__slider-item--active">
+                <a href="">
+                  <img src="src/assets/imgs/maru.jpg" alt="">
+                </a>
+              </li>
+              <li class="pet-card__slider-item"><a href=""><img src="src/assets/imgs/maru.jpg" alt=""></a></li>
+              <li class="pet-card__slider-item"><a href=""><img src="src/assets/imgs/maru.jpg" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="more-info">
+          <div class="more-info__help">
+            <h2 class="more-info__title more-info__help-title">Как помочь?</h2>
+            <div class="more-info__buttons-cont">
+              <button class="more-info__button more-info__button--shelter">Приютить</button>
+              <button class="more-info__button more-info__button--donation">Отправить пожертвование</button>
+              <button class="more-info__button more-info__button--share">Поделиться историей питомца</button>
+            </div>
+          </div>
+          <div class="more-info__about-pet">
+            <h2 class="more-info__title more-info__about-pet-title">Обо мне</h2>
+            <div class="more-info__text-cont">
+              <p>Мару - настоящая леди в плане использования лотка. Она полностью приучена к нему и всегда знает, где справить свои дела.</p>
+              <p>Когда дело касается еды, Мару не привередлива вовсе! Она с радостью ест как сухой, так и влажный корм, и ее аппетит всегда на высоте.</p>
+              <p>Но еще более удивительно то, что Мару прекрасно ладит с другими животными. Она настоящая социальная девочка и обожает заводить новых пушистых друзей.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
       <section class="pets-section wrap">
         <div class="pets-section__filter-cont">
           <ul class="pets-section__type-filter">
@@ -75,7 +138,7 @@
                 <p class="pets-section__pet-age">7 лет</p>
               </div>
               <img
-                class="pets-section__pet-sex"
+                class="pets-section__pet-gender"
                 src="src/assets/icons/female-icon.svg"
                 alt=""
               />

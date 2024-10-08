@@ -27,10 +27,15 @@
             line-height: 1.2rem;
 
         }
+        &__nav-cont{
+            flex: 1;
+            max-width: 660px;
+        }
 
         &__nav {
             display: flex;
-            gap: clamp(0px, 4vw, 50px);
+            justify-content: space-between;
+            // gap: clamp(0px, 4vw, 50px);
 
             &-link {
                 font-size: 0.875rem;

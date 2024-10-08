@@ -1,5 +1,5 @@
 .pets-section {
-  // Родительский блок для всех элементов внутри секции
+  margin-top: 40px;
 
   &__filter-cont {
     display: flex;
@@ -63,7 +63,7 @@
     margin-top: auto;
   }
 
-  &__pet-sex {
+  &__pet-gender {
     // Пустой стиль, можно использовать для будущих изменений
   }
 
