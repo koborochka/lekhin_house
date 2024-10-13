@@ -154,12 +154,15 @@ img {
 }
 
 .main-title {
+  max-width: 1000px;
+  margin: 50px auto 0px;
+}
+
+.title {
   font-weight: 500;
   font-size: 2rem;
   line-height: 2.625rem;
-  max-width: 1000px;
   text-align: center;
-  margin: 50px auto 0px;
 }
 
 .pink {
@@ -485,6 +488,113 @@ img {
 .footer-cont__social-media-cont .footer-cont__social-media-item > img {
   width: 40px;
   height: 40px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__img-cont {
+  position: relative;
+}
+.hero__img-cont::after, .hero__img-cont::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.hero__img-cont::after {
+  width: 325.62px;
+  height: 313.4px;
+  background-image: url("././assets/icons/hero-bg-item-circle.svg");
+}
+.hero__img-cont::before {
+  width: 466px;
+  height: 206px;
+  background-image: url("././assets/icons/hero-bg-item-star.svg");
+}
+.hero__img-cont--left::after {
+  top: 10px;
+  left: 20px;
+}
+.hero__img-cont--left::before {
+  top: 215px;
+  left: 200px;
+  rotate: 180deg;
+}
+.hero__img-cont--right::after {
+  bottom: 70px;
+  right: 50px;
+  rotate: 180deg;
+}
+.hero__img-cont--right::before {
+  top: 25px;
+  left: -200px;
+}
+
+.hero__title {
+  max-width: 617px;
+  font-size: 2.25rem;
+  line-height: 2.875rem;
+  margin-top: 135px;
+}
+
+.hero__find-pet-butt {
+  position: relative;
+  margin: 100px auto 0;
+  border: 1px solid transparent;
+  background-color: #4796F3;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.5rem;
+  padding: 12px 60px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.hero__find-pet-butt::after, .hero__find-pet-butt::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 266.39px;
+  z-index: 1;
+}
+.hero__find-pet-butt::after {
+  height: 191.98px;
+  bottom: 0;
+  left: -425px;
+  background-image: url("././assets/icons/drown-dog.svg");
+}
+.hero__find-pet-butt::before {
+  height: 218.62px;
+  bottom: 0;
+  right: -425px;
+  background-image: url("././assets/icons/drown-cat.svg");
+}
+
+.hero__find-pet-butt:hover {
+  border: 1px solid #4796F3;
+  background-color: white;
+  border-radius: 30px;
+  color: #4796F3;
+  font-size: 1.5rem;
+  padding: 12px 60px;
+  cursor: pointer;
+}
+
+.hero__img--dog {
+  max-width: 547.05px;
+  max-height: 552.25px;
+}
+.hero__img--cat {
+  max-width: 547.05px;
+  max-height: 552.25px;
 }
 
 /*# sourceMappingURL=index.css.map */
