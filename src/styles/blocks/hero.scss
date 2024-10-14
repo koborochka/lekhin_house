@@ -45,10 +45,9 @@
 
     &--right{
         &::after {
-            bottom: 70px;
-            right: 50px;
+            top: 167px;
+            right: 25px;
             rotate: 180deg;
-
         }
     
         &::before {
@@ -57,6 +56,18 @@
         }
     }
 }
+
+.hero__img {
+    &--dog {
+        max-height: 552.25px;
+        max-width: auto;
+    }
+    &--cat {
+        max-height: 552.25px;
+        max-width: auto;
+    }
+}
+
 .hero__title {
     max-width: 617px;
 
@@ -68,8 +79,9 @@
 .hero__find-pet-butt {
     position: relative;
     margin: 100px auto 0;
-    @include btn(transparent, $header-link-bg, 30px, white, 1.5rem, 12px, 60px);
-    transition: 0.3s ease-in-out;
+
+    font-size: 1.5rem;
+    padding: 0.75rem 3.75rem;
 
     &::after,
     &::before {
@@ -95,25 +107,4 @@
         right: -425px;
         background-image: url("././assets/icons/drown-cat.svg");
     }
-}
-.hero__find-pet-butt:hover {
-    @include btn($header-link-bg, white, 30px, $header-link-bg, 1.5rem, 12px, 60px);
-}
-
-.hero__img {
-    &--dog {
-        max-width: 547.05px;
-        max-height: 552.25px;
-    }
-    &--cat {
-        max-width: 547.05px;
-        max-height: 552.25px;
-    }
-
-    
-}
-
-
-
-.blue-butt {
 }

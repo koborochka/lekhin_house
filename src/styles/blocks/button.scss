@@ -1,0 +1,32 @@
+.btn{
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.btn--blue{
+    background-color: $header-link-bg;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid $header-link-bg;
+
+    &:hover{
+        background-color: white;
+        color: $header-link-bg;
+    }
+}
+
+.btn--white{
+    background-color: white;
+    color: $header-link-bg;
+    border: 1px solid $header-link-bg;
+    border-radius: 20px;
+
+    &:hover{
+        background-color: $header-link-bg;
+        color: white;
+    }
+}

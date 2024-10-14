@@ -4,12 +4,14 @@
   padding: 67px 0;
   position: relative;
   overflow: hidden;
+  z-index: -2;
 
   &::after,
   &::before {
     content: "";
     position: absolute;
     background-repeat: no-repeat;
+    z-index: -1;
   }
 
   &::after {

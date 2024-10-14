@@ -1,189 +1,188 @@
-
-
 .pet-card-section {
     margin-top: 20px;
 }
 
 .breadcrumb {
-}
-.breadcrumb__list {
-    display: flex;
-    align-items: center;
-}
-.breadcrumb__item{
-    display: flex;
-    align-items: center; 
-}
-.breadcrumb__item, .breadcrumb__item > a {
-    color: $light-gray;
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        color: $light-gray;
+
+        & + &::before {
+            content: '';
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            background: url("././assets/icons/paw.svg") no-repeat center center;
+            background-size: contain;
+            margin: 0 23px;
+        }
+
+        > a {
+            color: $light-gray;
+        }
+    }
 }
 
-.breadcrumb__item + .breadcrumb__item::before {
-    content: '';
-    display: inline-block;
-    width: 17px;
-    height: 17px;
-    background: url("././assets/icons/paw.svg") no-repeat center center;
-    background-size: contain;
-    margin: 0 23px;
-  }
 .pet-card {
     display: flex;
     margin-top: 30px;
     gap: 55px;
     max-height: 450px;
     position: relative;
-}
-.pet-card::before{
-    content: "";
-    position: absolute;
-    background-repeat: no-repeat;
 
-    width: 455px;
-    height: 178.61px;
-    bottom: 32px;
-    left: -110px;
-    background-image: url("././assets/icons/card-bg-item.svg");
-    z-index: -1;
-}
-.pet-card__description {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    max-width: 400px;
-    max-height: 450px;
-    
-}
-.pet-card__name {
-    font-size: 3rem;
-    font-weight: 500;
-    line-height: 3.6rem;
-    margin-bottom: 40px;
+    &::before {
+        content: "";
+        position: absolute;
+        background-repeat: no-repeat;
+        width: 455px;
+        height: 178.61px;
+        bottom: 32px;
+        left: -110px;
+        background-image: url("././assets/icons/card-bg-item.svg");
+        z-index: -1;
+    }
 
-}
-.pet-card__info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.pet-card__info-item {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 15px;
-    border-bottom: 1px solid black;
-}
-.pet-card__info-item:last-child {
-    border-bottom: none;
-}
+    &__description {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        max-width: 400px;
+        max-height: 450px;
+    }
 
-.pet-card__info-title {
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-}
-.pet-card__info-value {
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 1.5rem;
+    &__name {
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 3.6rem;
+        margin-bottom: 40px;
+    }
 
-}
-.pet-card__shelter-button {
-    margin-top: auto;
-    @include btn(transparent, $header-link-bg, 30px, white, 1.5rem, 16px, 36px);
-}
-.pet-card__shelter-button:hover {
-    border-color: $header-link-bg;
-    background-color: white;
-    color: $header-link-bg;
-}
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
 
-.pet-card__gallery {
-    display: grid;
-    gap: 15px;
-    max-width: 745px;
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            border-bottom: 1px solid black;
 
-    grid-template-columns: 59fr 14fr;
-    aspect-ratio: 59 / 14;
-}
-.pet-card__main-photo {
-    width: 100%;
-    height: 100%;
-}
-.pet-card__slider {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);;
-    gap: 15px;
-}
-.pet-card__slider-item img {
-    aspect-ratio: 1 / 1;
-}
+            &:last-child {
+                border-bottom: none;
+            }
+        }
 
-.pet-card__slider-item--active img {
-    opacity: 0.5;
+        &-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.5rem;
+        }
+
+        &-value {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.5rem;
+        }
+    }
+
+    &__shelter-button {
+        margin-top: auto;
+        font-size: 1.5rem;
+        padding: 1rem 2.25rem;
+
+        &:hover {
+            border-color: $header-link-bg;
+            background-color: white;
+            color: $header-link-bg;
+        }
+    }
+
+    &__gallery {
+        display: grid;
+        gap: 15px;
+        max-width: 745px;
+        grid-template-columns: 59fr 14fr;
+        aspect-ratio: 59 / 14;
+    }
+
+    &__main-photo {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__slider {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 15px;
+
+        &-item {
+            img {
+                aspect-ratio: 1 / 1;
+            }
+
+            &--active img {
+                opacity: 0.5;
+            }
+        }
+    }
 }
-
-
 
 .more-info {
     display: flex;
     margin-top: 70px;
-    gap: 56px
-}
-.more-info__help { 
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    width: 100%; //заполняет сам себя
-}
-.more-info__title {
-    font-size: 3rem;
-    font-weight: 500;
-    line-height: 3.6rem;
-    white-space: nowrap;
-    margin-bottom: 30px;
-}
-.more-info__help-title {
-}
-.more-info__buttons-cont {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
-}
-.more-info__button {
-    @include btn($header-link-bg, white, 20px, $header-link-bg, 1.25rem, 10px, 36px);
-    border-width: 1.3px;
-}   
-.more-info__button:hover {
-    background-color: $header-link-bg;
-    color: white;     
-}   
-.more-info__button--shelter {
-}
-// .more-info__button--donation::before {
-//     content: "";
-//     position: absolute;
-//     background-repeat: no-repeat;
-//     width: 24px;
-//     height: 24px;
-//     bottom: 8px;
-//     left: 8px;
-//     background-image: url("././assets/icons/blue-gift-icon.svg");
-//     z-index: 1;  
-// }    красивые значки можно сделать с помощью реакта, счас для макета нет смысла
+    gap: 56px;
 
-.more-info__about-pet {
-}
-.more-info__about-pet-title {
-}
-.more-info__text-cont {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    
-}
-.more-info__text-cont p{
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 1.5rem;
+    &__help {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        width: 100%;  //заполняет сам себя
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 3.6rem;
+        white-space: nowrap;
+        margin-bottom: 30px;
+    }
+
+    &__buttons-cont {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    &__button {
+        font-size: 1.25rem;
+        padding: 0.625rem 2.25rem;
+        border-width: 1.3px;
+
+        &:hover {
+            background-color: $header-link-bg;
+            color: white;
+        }
+    }
+
+    // &__about-pet {
+    // }
+
+    &__text-cont {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.5rem;
+        }
+    }
 }

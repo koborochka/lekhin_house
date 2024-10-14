@@ -47,12 +47,15 @@
                 }
 
                 &--blue {
-                    background-color: $header-link-bg;
-                    color: white;
-                    
                     padding: 0.625rem 1.875rem;
                     border-radius: 20px;
+
+                    
+                    &:hover{
+                        background-color: $header-bg;
+                    }
                 }
+
             }
         }
     }
