@@ -1,110 +1,105 @@
 .hero {
     display: flex;
     justify-content: space-between;
-}
-.hero__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.hero__img-cont{
-    position: relative;
 
-    &::after,
-    &::before {
-        content: "";
-        position: absolute;
-        background-repeat: no-repeat;
-        z-index: -1;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    &::after {
-        width: 325.62px;
-        height: 313.4px;
-        background-image: url("././assets/icons/hero-bg-item-circle.svg");
-    }
+    &__img-cont {
+        position: relative;
 
-    &::before {
-        width: 466px;
-        height: 206px;
-        background-image: url("././assets/icons/hero-bg-item-star.svg");
-    }
-
-    &--left{
-        &::after {
-            top: 10px;
-            left: 20px;
-        }
-    
+        &::after,
         &::before {
-            top: 215px;
-            left: 200px;
-            rotate: 180deg;
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            z-index: -1;
         }
-    }
 
-    &--right{
         &::after {
-            top: 167px;
-            right: 25px;
-            rotate: 180deg;
+            width: 325.62px;
+            height: 313.4px;
+            background-image: url("././assets/icons/hero-bg-item-circle.svg");
         }
-    
+
         &::before {
-            top: 25px;
-            left: -200px;
+            width: 466px;
+            height: 206px;
+            background-image: url("././assets/icons/hero-bg-item-star.svg");
+        }
+
+        &--left {
+            &::after {
+                top: 10px;
+                left: 20px;
+            }
+
+            &::before {
+                top: 215px;
+                left: 200px;
+                rotate: 180deg;
+            }
+        }
+
+        &--right {
+            &::after {
+                top: 167px;
+                right: 25px;
+                rotate: 180deg;
+            }
+
+            &::before {
+                top: 25px;
+                left: -200px;
+            }
         }
     }
-}
 
-.hero__img {
-    &--dog {
-        max-height: 552.25px;
-        max-width: auto;
-    }
-    &--cat {
-        max-height: 552.25px;
-        max-width: auto;
-    }
-}
-
-.hero__title {
-    max-width: 617px;
-
-    font-size: 2.25rem;
-    line-height: 2.875rem;
-    margin-top: 135px;
-}
-
-.hero__find-pet-butt {
-    position: relative;
-    margin: 100px auto 0;
-
-    font-size: 1.5rem;
-    padding: 0.75rem 3.75rem;
-
-    &::after,
-    &::before {
-        content: "";
-        position: absolute;
-        background-repeat: no-repeat;
-        width: 266.39px;      
-        z-index: 1;    
+    &__img {
+        &--dog,
+        &--cat {
+            max-height: 552.25px;
+            max-width: auto;
+        }
     }
 
-    &::after {
-        height: 191.98px;
-
-        bottom: 0;
-        left: -425px;
-        background-image: url("././assets/icons/drown-dog.svg");
+    &__title {
+        max-width: 617px;
+        font-size: 2.25rem;
+        line-height: 2.875rem;
+        margin-top: 135px;
     }
 
-    &::before {
-        height: 218.62px;
-      
-        bottom: 0;
-        right: -425px;
-        background-image: url("././assets/icons/drown-cat.svg");
+    &__find-pet-butt {
+        position: relative;
+        margin: 100px auto 0;
+        font-size: 1.5rem;
+        padding: 0.75rem 3.75rem;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            width: 266.39px;
+            z-index: 1;
+        }
+
+        &::after {
+            height: 191.98px;
+            bottom: 0;
+            left: -425px;
+            background-image: url("././assets/icons/drown-dog.svg");
+        }
+
+        &::before {
+            height: 218.62px;
+            bottom: 0;
+            right: -425px;
+            background-image: url("././assets/icons/drown-cat.svg");
+        }
     }
 }

@@ -15,10 +15,10 @@
   &__type-filter-item {
     line-height: 1.2rem;
     cursor: pointer;
-  }
 
-  &__type-filter-item--active {
-    text-decoration: underline;
+    &--active {
+      text-decoration: underline;
+    }
   }
 
   &__filter-button {

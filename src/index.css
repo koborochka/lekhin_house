@@ -454,7 +454,7 @@ img {
 }
 
 .btn {
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
   cursor: pointer;
 }
 .btn:focus {
@@ -487,13 +487,11 @@ img {
   display: flex;
   justify-content: space-between;
 }
-
 .hero__content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .hero__img-cont {
   position: relative;
 }
@@ -531,23 +529,16 @@ img {
   top: 25px;
   left: -200px;
 }
-
-.hero__img--dog {
+.hero__img--dog, .hero__img--cat {
   max-height: 552.25px;
   max-width: auto;
 }
-.hero__img--cat {
-  max-height: 552.25px;
-  max-width: auto;
-}
-
 .hero__title {
   max-width: 617px;
   font-size: 2.25rem;
   line-height: 2.875rem;
   margin-top: 135px;
 }
-
 .hero__find-pet-butt {
   position: relative;
   margin: 100px auto 0;
