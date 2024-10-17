@@ -52,7 +52,7 @@
         flex-direction: column;
         flex: 1;
         max-width: 400px;
-        max-height: 450px;
+        max-height: 470px;
     }
 
     &__name {
@@ -112,6 +112,7 @@
     }
 
     &__main-photo {
+        display: block;
         width: 100%;
         height: 100%;
     }

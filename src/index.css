@@ -213,7 +213,7 @@ img {
   flex-direction: column;
   flex: 1;
   max-width: 400px;
-  max-height: 450px;
+  max-height: 470px;
 }
 .pet-card__name {
   font-size: 3rem;
@@ -263,6 +263,7 @@ img {
   aspect-ratio: 59/14;
 }
 .pet-card__main-photo {
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -563,6 +564,67 @@ img {
   bottom: 0;
   right: -425px;
   background-image: url("././assets/icons/drown-cat.svg");
+}
+
+.about-shelter {
+  margin-top: 80px;
+  display: flex;
+  gap: 40px;
+}
+
+.about-shelter h2 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 2.7rem;
+}
+
+.about-shelter p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+}
+
+.our-shelter {
+  background-color: #EFF6FF;
+  border-radius: 20px;
+  padding: 1.5625rem 2.5rem;
+  max-width: 736px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.our-shelter__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.our-shelter__logo-img {
+  width: 50.52px;
+  height: 45px;
+}
+
+.our-mission {
+  padding-top: 1.5625rem;
+  max-width: 425px;
+}
+
+.our-mission__title {
+  margin-bottom: 34px;
+}
+
+.our-mission__missions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.our-mission__mission {
+  border-radius: 20px;
+  border: 1.3px solid #4796F3;
+  padding: 0.75rem 1.25rem;
 }
 
 /*# sourceMappingURL=index.css.map */
