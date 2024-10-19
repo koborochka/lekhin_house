@@ -19,17 +19,19 @@
         }
 
         &__logo-name {
+            font-weight: 300;
             font-size: 1.5rem;
             line-height: 1.8rem;
             margin-bottom: 4px;
         }
         &__logo-description{
+            font-weight: 200;
             line-height: 1.2rem;
 
         }
         &__nav-cont{
             flex: 1;
-            max-width: 660px;
+            max-width: 672px;
         }
 
         &__nav {
@@ -38,15 +40,20 @@
             // gap: clamp(0px, 4vw, 50px);
 
             &-link {
+                font-weight: 200;
                 font-size: 0.875rem;
                 line-height: 1.05rem;
+                padding: 10px 20px;
+
                 white-space: nowrap;
 
                 &--active {
-                    text-decoration: underline;
+                    border: 0.8px solid black;
+                    border-radius: 20px;
                 }
 
                 &--blue {
+                    font-weight: 300;
                     padding: 0.625rem 1.875rem;
                     border-radius: 20px;
 

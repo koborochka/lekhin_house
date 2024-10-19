@@ -117,30 +117,36 @@ img {
   max-height: auto;
 }
 .main-header .header-cont__logo-name {
+  font-weight: 300;
   font-size: 1.5rem;
   line-height: 1.8rem;
   margin-bottom: 4px;
 }
 .main-header .header-cont__logo-description {
+  font-weight: 200;
   line-height: 1.2rem;
 }
 .main-header .header-cont__nav-cont {
   flex: 1;
-  max-width: 660px;
+  max-width: 672px;
 }
 .main-header .header-cont__nav {
   display: flex;
   justify-content: space-between;
 }
 .main-header .header-cont__nav-link {
+  font-weight: 200;
   font-size: 0.875rem;
   line-height: 1.05rem;
+  padding: 10px 20px;
   white-space: nowrap;
 }
 .main-header .header-cont__nav-link--active {
-  text-decoration: underline;
+  border: 0.8px solid black;
+  border-radius: 20px;
 }
 .main-header .header-cont__nav-link--blue {
+  font-weight: 300;
   padding: 0.625rem 1.875rem;
   border-radius: 20px;
 }
@@ -154,7 +160,7 @@ img {
 }
 
 .title-h1 {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 2rem;
   line-height: 2.625rem;
   text-align: center;
@@ -223,7 +229,7 @@ img {
 }
 .pet-card__name {
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 3.6rem;
   margin-bottom: 40px;
 }
@@ -325,7 +331,7 @@ img {
 }
 .more-info__text-cont p {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 100;
   line-height: 1.5rem;
 }
 
@@ -370,18 +376,19 @@ img {
   gap: 15px;
 }
 .pets-section__pet-name {
+  font-weight: 300;
   font-size: 2rem;
   line-height: 2.4rem;
   margin-top: auto;
 }
 .pets-section__pet-age {
   line-height: 1.375rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: auto;
 }
 .pets-section__pet-description {
   line-height: 1.375rem;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .main-footer {
@@ -444,9 +451,9 @@ img {
 }
 
 .footer-cont__shelter-desc {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  line-height: 2.25rem;
+  line-height: 1.75rem;
   text-align: center;
   margin-bottom: 70px;
 }
@@ -547,6 +554,7 @@ img {
   margin-top: 135px;
 }
 .hero__find-pet-butt {
+  font-weight: 300;
   position: relative;
   margin: 100px auto 0;
   font-size: 1.5rem;
@@ -575,18 +583,18 @@ img {
 .about-shelter {
   margin-top: 80px;
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
 .about-shelter h2 {
   font-size: 2.25rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 2.7rem;
 }
 
 .about-shelter p {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 100;
   line-height: 1.75rem;
 }
 
@@ -594,7 +602,7 @@ img {
   background-color: #EFF6FF;
   border-radius: 20px;
   padding: 1.5625rem 2.5rem;
-  max-width: 736px;
+  max-width: 721px;
   display: flex;
   flex-direction: column;
   gap: 12px;
