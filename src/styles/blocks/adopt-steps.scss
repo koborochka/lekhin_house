@@ -1,101 +1,92 @@
 .adopt-steps {
-text-align: center;
-padding: 40px;
+    text-align: center;
+    padding: 40px;
+
+    &__title {
+        text-align: left;
+        margin-bottom: 30px;
+        margin-top: 80px;
+    }
+
+    &__steps {
+        display: flex;
+        gap: 50px;
+    }
+
+    &__step {
+        display: flex;
+        position: relative;
+        width: 366.67px;
+        height: 250px;
+        padding: 30px 15px 30px 30px;
+        border-radius: 20px;
+        overflow: hidden;
+    
+        &--1 {
+            background-color: $step--blue;
+            .adopt-steps__step-number::after {
+                background-image: url("././assets/icons/number-1.svg");
+            }
+        }
+    
+        &--2 {
+            background-color: $step--pink;
+            .adopt-steps__step-number::after {
+                background-image: url("././assets/icons/number-2.svg");
+            }   
+        }
+    
+        &--3 {
+            background-color: $step--yellow;
+            .adopt-steps__step-number::after {
+                background-image: url("././assets/icons/number-3.svg");
+            }
+        }
+    
+        &::before {
+            content: '';
+            position: absolute;
+            top: -206px;
+            left: -204px;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 4px solid white;
+            width: 353px;
+            height: 307px;
+        }
+    
+        &:hover {
+            transform: scale(1.05);
+        }  
+    
+        p {
+            margin-top: auto;
+            font-size: 1.5rem;
+            font-weight: 200;
+            line-height: 1.875rem;
+            text-align: left;
+        }
+    }
+
+    &__step-number {
+        position: absolute;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        background-color: white;
+        top: 30px;
+        left: 30px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 18.5px;
+            height: 40px;
+        }
+    }
 }
-
-.adopt-steps__title{
-    text-align: left;
-    margin-bottom: 30px;
-    margin-top: 80px;
-}
-
-.steps {
-    display: flex;
-    gap: 50px;
-}
-
-.step {
-    display: flex;
-    position: relative;
-    width: 366.67px;
-    height: 250px;
-
-
-    padding: 30px 15px 30px 30px;
-    border-radius: 20px;
-
-    overflow: hidden; 
-}
-
-.step--1 {
-background-color: $step--blue;
-}
-
-.step--2 {
-background-color: $step--pink;
-}
-
-.step--3 {
-background-color: $step--yellow;
-}
-
-.step-number {
-    position: absolute;
-
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    background-color: white;
-
-    top: 30px;
-    left: 30px;
-}
-
-.step .step-number::after {
-    content: '';
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: contain;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 18.5px;
-    height: 40px;
-}
-.step--1 .step-number::after {
-    background-image: url("././assets/icons/number-1.svg") ;
-}
-.step--2 .step-number::after {
-    background-image: url("././assets/icons/number-2.svg") ;
-}
-.step--3 .step-number::after {
-    background-image: url("././assets/icons/number-3.svg") ;
-}
-
-.step::before {
-    content: '';
-    position: absolute;
-    top: -206px;
-    left: -204px;
-    background-color: transparent;
-    border-radius: 50%;
-    border: 4px solid white;
-    width: 353px;
-    height: 307px;
-       
-}
-
-
-.step p {
-    margin-top: auto;
-    font-size: 1.5rem;
-    font-weight: 200;
-    line-height: 1.875rem;
-
-    text-align: left;
-}
-
-.step:hover {
-transform: scale(1.05);
-}
-  

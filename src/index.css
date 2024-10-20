@@ -441,11 +441,13 @@ img {
   max-height: auto;
 }
 .footer-cont__logo-cont .footer-cont__logo-name {
+  font-weight: 300;
   font-size: 2rem;
   line-height: 2.39rem;
   margin-bottom: 5px;
 }
 .footer-cont__logo-cont .footer-cont__logo-description {
+  font-weight: 300;
   font-size: 1.33rem;
   line-height: 1.6rem;
 }
@@ -645,19 +647,16 @@ img {
   text-align: center;
   padding: 40px;
 }
-
 .adopt-steps__title {
   text-align: left;
   margin-bottom: 30px;
   margin-top: 80px;
 }
-
-.steps {
+.adopt-steps__steps {
   display: flex;
   gap: 50px;
 }
-
-.step {
+.adopt-steps__step {
   display: flex;
   position: relative;
   width: 366.67px;
@@ -666,54 +665,25 @@ img {
   border-radius: 20px;
   overflow: hidden;
 }
-
-.step--1 {
+.adopt-steps__step--1 {
   background-color: #D2E6FF;
 }
-
-.step--2 {
-  background-color: #FFCEE6;
-}
-
-.step--3 {
-  background-color: #FFE7BD;
-}
-
-.step-number {
-  position: absolute;
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-  background-color: white;
-  top: 30px;
-  left: 30px;
-}
-
-.step .step-number::after {
-  content: "";
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 18.5px;
-  height: 40px;
-}
-
-.step--1 .step-number::after {
+.adopt-steps__step--1 .adopt-steps__step-number::after {
   background-image: url("././assets/icons/number-1.svg");
 }
-
-.step--2 .step-number::after {
+.adopt-steps__step--2 {
+  background-color: #FFCEE6;
+}
+.adopt-steps__step--2 .adopt-steps__step-number::after {
   background-image: url("././assets/icons/number-2.svg");
 }
-
-.step--3 .step-number::after {
+.adopt-steps__step--3 {
+  background-color: #FFE7BD;
+}
+.adopt-steps__step--3 .adopt-steps__step-number::after {
   background-image: url("././assets/icons/number-3.svg");
 }
-
-.step::before {
+.adopt-steps__step::before {
   content: "";
   position: absolute;
   top: -206px;
@@ -724,17 +694,35 @@ img {
   width: 353px;
   height: 307px;
 }
-
-.step p {
+.adopt-steps__step:hover {
+  transform: scale(1.05);
+}
+.adopt-steps__step p {
   margin-top: auto;
   font-size: 1.5rem;
   font-weight: 200;
   line-height: 1.875rem;
   text-align: left;
 }
-
-.step:hover {
-  transform: scale(1.05);
+.adopt-steps__step-number {
+  position: absolute;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  top: 30px;
+  left: 30px;
+}
+.adopt-steps__step-number::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18.5px;
+  height: 40px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -125,6 +125,9 @@
         &-item {
             img {
                 aspect-ratio: 1 / 1;
+                //подумать как это по нормальному сделать
+                // background: cover;
+                // overflow: hidden; не работают
             }
 
             &--active img {
