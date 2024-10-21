@@ -37,18 +37,17 @@
         &__nav {
             display: flex;
             justify-content: space-between;
-            // gap: clamp(0px, 4vw, 50px);
 
             &-link {
                 font-weight: 200;
                 font-size: 0.875rem;
                 line-height: 1.05rem;
                 padding: 10px 20px;
-
+                border: 0.8px solid transparent;
                 white-space: nowrap;
 
                 &--active {
-                    border: 0.8px solid black;
+                    border-color: black;
                     border-radius: 20px;
                 }
 
@@ -56,10 +55,11 @@
                     font-weight: 300;
                     padding: 0.625rem 1.875rem;
                     border-radius: 20px;
-
+                    border: 1px solid $header-link-bg;
                     
                     &:hover{
                         background-color: $header-bg;
+                        border: 1px solid $header-link-bg !important;
                     }
                 }
 

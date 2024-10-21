@@ -139,19 +139,22 @@ img {
   font-size: 0.875rem;
   line-height: 1.05rem;
   padding: 10px 20px;
+  border: 0.8px solid transparent;
   white-space: nowrap;
 }
 .main-header .header-cont__nav-link--active {
-  border: 0.8px solid black;
+  border-color: black;
   border-radius: 20px;
 }
 .main-header .header-cont__nav-link--blue {
   font-weight: 300;
   padding: 0.625rem 1.875rem;
   border-radius: 20px;
+  border: 1px solid #4796F3;
 }
 .main-header .header-cont__nav-link--blue:hover {
   background-color: #EFF6FF;
+  border: 1px solid #4796F3 !important;
 }
 
 .main-title {
