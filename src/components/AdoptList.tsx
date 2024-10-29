@@ -34,6 +34,7 @@ export const AdoptList: React.FC<AdoptListProps> = () => {
 
     const handlePetClick = (pet: IPet) => {
         setSelectedPet(pet); // Устанавливаем питомца в контекст
+        localStorage.setItem('selectedPet', JSON.stringify(pet));
         navigate(`/adopt/${pet.name}`);
     };
     

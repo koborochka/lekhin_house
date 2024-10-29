@@ -9,19 +9,24 @@
 
   &__type-filter {
     display: flex;
-    gap: 40px;
+    gap: 30px;
+    align-items: center;
   }
 
   &__type-filter-item {
-    line-height: 1.2rem;
+    line-height: 1.375rem;
+    font-weight: 200;
     cursor: pointer;
 
     &--active {
-      text-decoration: underline;
+      padding: 0.3125rem 1.5625rem;
+      border: 1px solid black;
+      border-radius: 20px;
     }
   }
 
   &__filter-button {
+    font-weight: 200;
     // Пустой стиль, можно использовать для будущих изменений
   }
 

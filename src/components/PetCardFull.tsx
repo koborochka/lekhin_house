@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import { usePet } from "../context/PetContext";
+import { IoPawSharp } from "react-icons/io5";
+import { IoGift } from "react-icons/io5";
 
 const PetCardFull: React.FC = () => {
-    const { selectedPet } = usePet(); // Получаем питомца из контекста
+    const { selectedPet, setSelectedPet } = usePet(); // Получаем питомца из контекста
+
+    useEffect(() => {
+        const savedPet = localStorage.getItem('selectedPet');
+        if (savedPet && !selectedPet) {
+            setSelectedPet(JSON.parse(savedPet));
+        }
+    }, [selectedPet, setSelectedPet]);
 
     if (!selectedPet) {
         return <div>Питомец не найден.</div>;
@@ -51,9 +61,9 @@ const PetCardFull: React.FC = () => {
                 <div className="more-info__help">
                     <h2 className="more-info__title more-info__help-title">Как помочь?</h2>
                     <div className="more-info__buttons-cont">
-                        <button className="more-info__button more-info__button--shelter btn--white btn">Приютить</button>
-                        <button className="more-info__button more-info__button--donation btn--white btn">Отправить пожертвование</button>
-                        <button className="more-info__button more-info__button--share btn--white btn">Поделиться историей питомца</button>
+                        <button className="more-info__button more-info__button--shelter btn--white btn"><IoPawSharp size={24}/> Приютить</button>
+                        <button className="more-info__button more-info__button--donation btn--white btn"><IoGift size={24}/>Отправить пожертвование</button>
+                        {/* <button className="more-info__button more-info__button--share btn--white btn">Поделиться историей питомца</button> */}
                     </div>
                 </div>
                 <div className="more-info__about-pet">

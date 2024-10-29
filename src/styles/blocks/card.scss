@@ -172,6 +172,9 @@
         font-size: 1.25rem;
         padding: 0.625rem 2.25rem;
         border-width: 1.3px;
+        align-items: center;
+        display: flex;
+        gap: 15px;
 
         &:hover {
             background-color: $header-link-bg;

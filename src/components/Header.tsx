@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     const location = useLocation();
 
     const isActive = (path: string) => {
-        return location.pathname === path ? 'header-cont__nav-link--active' : '';
+        return location.pathname.startsWith(path) ? 'header-cont__nav-link--active' : '';
     };
 
     return (
