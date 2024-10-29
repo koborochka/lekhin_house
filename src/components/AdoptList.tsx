@@ -1,23 +1,23 @@
 import axios from 'axios';
 import IPet from '../interfaces/IPet';
-import PetCartBrief from './PetCartBrief';
+import PetCardBrief from './PetCardBrief';
 import { useEffect, useState } from 'react';
+import { usePet } from '../context/PetContext';
+import { useNavigate } from 'react-router-dom';
 
 type AdoptListProps = {
-    maxLength: number;
+   
 };
 
-type User = {
-    id: number,
-    name: string,
-}
 
-export const AdoptList: React.FC<AdoptListProps> = ({ maxLength }) => {
+export const AdoptList: React.FC<AdoptListProps> = () => {
     const [pets, setPets] = useState<IPet[]>([]);
+    const { setSelectedPet } = usePet();
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
-        const fetchUsers = async () => {
+        const fetchPets = async () => {
             setIsLoading(true);
             try {
                 const response = await axios.get<IPet[]>('http://localhost:8080/api/pet');              
@@ -29,12 +29,17 @@ export const AdoptList: React.FC<AdoptListProps> = ({ maxLength }) => {
             }
         };
 
-        fetchUsers(); 
+        fetchPets(); 
     }, []);
+
+    const handlePetClick = (pet: IPet) => {
+        setSelectedPet(pet); // Устанавливаем питомца в контекст
+        navigate(`/adopt/${pet.name}`);
+    };
     
 
-    return (
-        
+    return (   
+        isLoading ? <div>Загрузка...</div> :  
         <section className="pets-section wrap">
             <div className="pets-section__filter-cont">
                 <ul className="pets-section__type-filter">
@@ -45,9 +50,12 @@ export const AdoptList: React.FC<AdoptListProps> = ({ maxLength }) => {
             <div className="pets-section__filter-button">Фильтры</div>           
             </div>
             <ul className="pets-section__pets-list">
-                {pets?.map(pet => <PetCartBrief key={pet.id} petItem={pet} />)}
+                {pets?.map(pet => (
+                    <li className="pets-section__pet-item" key={pet.id} onClick={() => handlePetClick(pet)}>
+                        <PetCardBrief petItem={pet} />
+                    </li>
+                ))}
             </ul>
-        </section>
-        
+        </section>  
     );
 };

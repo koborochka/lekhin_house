@@ -279,8 +279,11 @@ img {
 }
 .pet-card__main-photo {
   display: block;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
+  max-width: 590px;
+  max-height: 450px;
 }
 .pet-card__slider {
   display: grid;
@@ -289,6 +292,7 @@ img {
 }
 .pet-card__slider-item img {
   aspect-ratio: 1/1;
+  border-radius: 6px;
 }
 .pet-card__slider-item--active img {
   opacity: 0.5;

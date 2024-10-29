@@ -7,22 +7,27 @@ import AdoptPage from './pages/AdoptPage';
 import NewsPage from './pages/NewsPage';
 import ContactsPage from './pages/ContactsPage';
 import HelpPage from './pages/HelpPage';
+import { PetProvider } from './context/PetContext';
+import PetCardPage from './pages/PetCardPage';
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/shelter" element={<ShelterPage />} />
-          <Route path="/adopt" element={<AdoptPage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/help" element={<HelpPage />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <PetProvider>
+      <Router>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/shelter" element={<ShelterPage />} />
+            <Route path="/adopt" element={<AdoptPage />} />
+            <Route path="/adopt/:petName" element={<PetCardPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/contacts" element={<ContactsPage />} />
+            <Route path="/help" element={<HelpPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </PetProvider>
   );
 };
 

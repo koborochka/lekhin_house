@@ -113,8 +113,11 @@
 
     &__main-photo {
         display: block;
+        border-radius: 10px;
         width: 100%;
         height: 100%;
+        max-width: 590px;
+        max-height: 450px; //подумать как более адекватно сделать это. При разных соотношениях сторон фотки плющит
     }
 
     &__slider {
@@ -125,6 +128,7 @@
         &-item {
             img {
                 aspect-ratio: 1 / 1;
+                border-radius: 6px;
                 //подумать как это по нормальному сделать
                 // background: cover;
                 // overflow: hidden; не работают
