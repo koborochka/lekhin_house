@@ -368,6 +368,9 @@ img {
 }
 .pets-section__pet-img {
   margin-bottom: 20px;
+  border-radius: 8px;
+  width: 370px;
+  height: 280px;
 }
 .pets-section__pet-info-cont {
   display: flex;
