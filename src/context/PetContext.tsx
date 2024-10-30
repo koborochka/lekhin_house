@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState} from 'react';
 import IPet from '../interfaces/IPet';
 
 type PetContextType = {
@@ -8,7 +8,7 @@ type PetContextType = {
 
 const PetContext = createContext<PetContextType | undefined>(undefined);
 
-export const PetProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const PetProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     const [selectedPet, setSelectedPet] = useState<IPet | null>(null);
 
     return (
