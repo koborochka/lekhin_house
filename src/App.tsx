@@ -10,25 +10,35 @@ import { PetProvider } from './context/PetContext';
 import PetCardPage from './pages/PetCardPage';
 import MainPage from './pages/MainPage';
 import ScrollToTop from './components/ScrollToTop';
+import AdminPage from './admin/AdminPage';
+import React from 'react';
+
+const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+  return(
+    <>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </>
+  )
+};
 
 const App = () => {
   return (
     <PetProvider>
       <Router>
         <ScrollToTop />
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/shelter" element={<ShelterPage />} />
-            <Route path="/adopt" element={<AdoptPage />} />
-            <Route path="/adopt/:petName" element={<PetCardPage />} />
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/contacts" element={<ContactsPage />} />
-            <Route path="/help" element={<HelpPage />} />
-          </Routes>
-        </main>
-        <Footer />
+        <Routes>
+          <Route path="/" element={<Layout><MainPage /></Layout>} />
+          <Route path="/shelter" element={<Layout><ShelterPage /></Layout>} />
+          <Route path="/adopt" element={<Layout><AdoptPage /></Layout>} />
+          <Route path="/adopt/:petName" element={<Layout><PetCardPage /></Layout>} />
+          <Route path="/news" element={<Layout><NewsPage /></Layout>} />
+          <Route path="/contacts" element={<Layout><ContactsPage /></Layout>} />
+          <Route path="/help" element={<Layout><HelpPage /></Layout>} />
+
+          <Route path="/admin/*" element={<AdminPage />} />
+        </Routes>
       </Router>
     </PetProvider>
   );

@@ -6,7 +6,7 @@ import { usePet } from '../context/PetContext';
 import { useNavigate } from 'react-router-dom';
 
 type AdoptListProps = {
-   
+   //тут мейби maxLength
 };
 
 
