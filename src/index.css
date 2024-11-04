@@ -650,12 +650,18 @@ img {
   flex-direction: column;
   gap: 15px;
 }
-.our-mission__missions-list__mission {
+.our-mission__mission {
   display: flex;
   gap: 15px;
   border-radius: 20px;
   border: 1.3px solid #4796F3;
   padding: 0.75rem 1rem;
+  align-items: center;
+}
+.our-mission__mission svg {
+  display: block;
+  width: 55px;
+  height: 24px;
 }
 
 .adopt-steps {

@@ -11,7 +11,10 @@ const PetCreate = (props: CreateProps) => (
         { id: 'female', name: 'Женский' },
       ]} />
       <NumberInput source="age" label="Возраст" />
-      <TextInput source="type" label="Тип" />
+      <SelectInput source="type" label="Тип" choices={[
+        { id: 'cat', name: 'Кот' },
+        { id: 'dog', name: 'Собака' },
+      ]} />
       <TextInput source="about" label="О питомце" />
       <TextInput source="description" label="Описание" />
       <TextInput source="images_url[0]" label="URL фото" />
