@@ -49,14 +49,21 @@
     &__missions-list {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 15px;   
+    }
 
-        &__mission {
-            display: flex;
-            gap: 15px;
-            border-radius: 20px;
-            border: 1.3px solid $header-link-bg;
-            padding: 0.75rem 1rem;
+    &__mission {
+        display: flex;
+        gap: 15px;
+        border-radius: 20px;
+        border: 1.3px solid $header-link-bg;
+        padding: 0.75rem 1rem;
+        align-items: center;
+
+        & svg{
+            display: block;
+            width: 55px;  //Есди поставить 24px он почему-то будет растягиваться только в высоту на 24, ширина будет маленькая. подбирал тыком
+            height: 24px; 
         }
     }
 }

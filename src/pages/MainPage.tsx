@@ -47,12 +47,11 @@ export default function MainPage() {
           <h2 className="our-mission__title">Наша миссия</h2>
           <ul className="our-mission__missions-list">
             <li className="our-mission__mission">
-                <IoPawSharp color='#4796F3' size={24}/> 
-                {/*хз как заставить стать их больше, пытался не получилось */}
+                <IoPawSharp color='#4796F3'/> 
                 <p>Сокращение численности безнадзорных животных и изменение отношения общества к ним</p>
             </li>
             <li className="our-mission__mission">
-                <GoHeartFill color="#4796F3" size={24} />
+                <GoHeartFill color="#4796F3" />
                 <p>Популяризация ответственного отношения к домашним животным</p>
             </li>
           </ul>
