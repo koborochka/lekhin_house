@@ -1,5 +1,4 @@
-// components/admin/PetCreate.js
-import { Create, SimpleForm, TextInput, NumberInput, SelectInput, CreateProps } from 'react-admin';
+import { Create, SimpleForm, TextInput, SelectInput, CreateProps, DateInput } from 'react-admin';
 
 const PetCreate = (props: CreateProps) => (
   <Create {...props}>
@@ -10,7 +9,6 @@ const PetCreate = (props: CreateProps) => (
         { id: 'male', name: 'Мужской' },
         { id: 'female', name: 'Женский' },
       ]} />
-      <NumberInput source="age" label="Возраст" />
       <SelectInput source="type" label="Тип" choices={[
         { id: 'cat', name: 'Кот' },
         { id: 'dog', name: 'Собака' },
@@ -18,6 +16,7 @@ const PetCreate = (props: CreateProps) => (
       <TextInput source="about" label="О питомце" />
       <TextInput source="description" label="Описание" />
       <TextInput source="images_url[0]" label="URL фото" />
+      <DateInput source="birthdate" label="Дата рождения питомца" />
     </SimpleForm>
   </Create>
 );

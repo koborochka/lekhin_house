@@ -2,7 +2,7 @@ export default interface IPet{
     id: number,
     name: string,
     type: 'dog'|'cat',
-    age: number,
+    birthdate: string,
     gender: 'male'|'female',
     breed: string,
     about: string,

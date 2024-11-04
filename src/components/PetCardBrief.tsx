@@ -1,4 +1,5 @@
 import IPet from "../interfaces/IPet";
+import { formatAge } from "../utils/utils";
 
 
 const PetCardBrief: React.FC<{
@@ -18,7 +19,7 @@ const PetCardBrief: React.FC<{
           <div className="pets-section__pet-info-cont">
               <div className="pets-section__pet-name-age-cont">
                   <p className="pets-section__pet-name">{petItem.name}</p>
-                  <p className="pets-section__pet-age">{petItem.age} лет</p>
+                  <p className="pets-section__pet-age">{formatAge(petItem.birthdate)}</p>
               </div>
               <img
                   className="pets-section__pet-gender"
