@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { usePet } from "../context/PetContext";
 import { IoPawSharp } from "react-icons/io5";
 import { IoGift } from "react-icons/io5";
+import { formatAge } from "../utils/utils";
 
 const PetCardFull: React.FC = () => {
     const { selectedPet, setSelectedPet } = usePet(); // Получаем питомца из контекста
@@ -41,7 +42,7 @@ const PetCardFull: React.FC = () => {
                         </li>
                         <li className="pet-card__info-item">
                             <p className="pet-card__info-title">Возраст</p>
-                            <p className="pet-card__info-value" id="pet-card__age">{selectedPet.age}</p>
+                            <p className="pet-card__info-value" id="pet-card__age">{formatAge(selectedPet.birthdate)}</p>
                         </li>
                     </ul>
                     <button className="pet-card__shelter-button btn--blue btn">Приютить</button>

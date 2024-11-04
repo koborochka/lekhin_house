@@ -1,8 +1,9 @@
-import { List, Datagrid, TextField, NumberField, ImageField, EditButton, DeleteButton, ListProps, SearchInput, TextInput, SelectInput, useSortState } from 'react-admin';
+import { List, Datagrid, TextField, NumberField, ImageField, EditButton, DeleteButton, ListProps, SearchInput, SelectInput, FunctionField } from 'react-admin';
+import { formatAge } from '../../utils/utils';
+import IPet from '../../interfaces/IPet';
 
 const postFilter = [
   <SearchInput source="q" alwaysOn />,
-  <TextInput source="name" />,
   <SelectInput source="type" choices={[
     { id: 'cat', name: 'Коты' },
     { id: 'dog', name: 'Собаки' },
@@ -22,10 +23,11 @@ const PetList = (props: ListProps) => {
         <TextField source="name" label="Имя" sortable={false} />
         <TextField source="breed" label="Порода" sortable={false} />
         <TextField source="gender" label="Пол" sortable={false} />
-        <TextField source="age" label="Возраст" sortByOrder='ASC'/>
+        <FunctionField label="Возраст" source="birthdate" render={(record: IPet) => formatAge(record.birthdate)} />       
         <TextField source="type" label="Тип" sortable={false} />
         <TextField source="about" label="О питомце" sortable={false} />
-        <ImageField source="images_url[0]" label="Фото" sortable={false} /> {/* Отображаем первое изображение */}
+        <TextField source="description" label="Описание" sortable={false} />
+        <ImageField source="images_url[0]" label="Фото" sortable={false} />
         <EditButton />
         <DeleteButton />
       </Datagrid>

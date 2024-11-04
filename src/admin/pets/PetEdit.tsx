@@ -1,5 +1,5 @@
 // components/admin/PetEdit.js
-import { Edit, SimpleForm, TextInput, NumberInput, SelectInput, EditProps } from 'react-admin';
+import { Edit, SimpleForm, TextInput, SelectInput, EditProps, DateInput } from 'react-admin';
 
 const PetEdit = (props: EditProps) => (
   <Edit {...props}>
@@ -10,8 +10,11 @@ const PetEdit = (props: EditProps) => (
         { id: 'male', name: 'Мужской' },
         { id: 'female', name: 'Женский' },
       ]} />
-      <NumberInput source="age" label="Возраст" />
-      <TextInput source="type" label="Тип" />
+      <DateInput source="birthdate" label="Дата рождения"/>
+      <SelectInput source="type" label="Тип" choices={[
+        { id: 'dog', name: 'Собака' },
+        { id: 'cat', name: 'Кот' },
+      ]} />
       <TextInput source="about" label="О питомце" />
       <TextInput source="description" label="Описание" />
       <TextInput source="images_url[0]" label="URL фото" />

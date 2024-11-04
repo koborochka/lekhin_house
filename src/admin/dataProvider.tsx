@@ -1,11 +1,11 @@
-import simpleRestProvider,   {  } from 'ra-data-simple-rest';
-
+import simpleRestProvider from 'ra-data-simple-rest';
+import  { GetListResult } from 'react-admin'
 const enhancedDataProvider = (apiUrl: string) => {
     const dataProvider = simpleRestProvider(apiUrl);
 
     return {
         ...dataProvider,
-        getList: (resource: string, params) => {
+        getList: (resource: string, params: any): Promise<GetListResult> => {
             const { page, perPage } = params.pagination;
             const { field, order } = params.sort;
 
@@ -14,7 +14,7 @@ const enhancedDataProvider = (apiUrl: string) => {
                 order: order,
                 page: page,
                 perPage: perPage,
-                ...params.filter, 
+                filter: JSON.stringify(params.filter), 
             };
 
             // Конструируем URL
@@ -29,7 +29,7 @@ const enhancedDataProvider = (apiUrl: string) => {
                 .then((data: any[]) => {
                     // Преобразуем данные в нужный формат
                     return {
-                        data: data, 
+                        data: data,
                         total: data.length,
                     };
                 });
