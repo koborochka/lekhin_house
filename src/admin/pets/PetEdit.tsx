@@ -1,7 +1,7 @@
-// components/admin/PetEdit.js
-import { Edit, SimpleForm, TextInput, SelectInput, EditProps, DateInput } from 'react-admin';
+import { Edit, SimpleForm, TextInput, SelectInput, EditProps, DateInput, FileInput, FileField} from 'react-admin';
 
-const PetEdit = (props: EditProps) => (
+const PetEdit = (props: EditProps) => {
+  return (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="name" label="Имя" />
@@ -17,9 +17,16 @@ const PetEdit = (props: EditProps) => (
       ]} />
       <TextInput source="about" label="О питомце" />
       <TextInput source="description" label="Описание" />
-      <TextInput source="images_url[0]" label="URL фото" />
+      <FileInput
+          source="images_url"
+          label="Фотографии"
+          accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.jfif'] }}
+          multiple
+        >
+          <FileField source="src" title="title" />
+        </FileInput>
     </SimpleForm>
   </Edit>
-);
+)};
 
 export default PetEdit;

@@ -1,5 +1,5 @@
-import { Create, SimpleForm, TextInput, SelectInput, CreateProps, DateInput } from 'react-admin';
-
+import { Create, SimpleForm, TextInput, SelectInput, CreateProps, DateInput, FileInput, FileField } from 'react-admin';
+  
 const PetCreate = (props: CreateProps) => (
   <Create {...props}>
     <SimpleForm>
@@ -13,10 +13,12 @@ const PetCreate = (props: CreateProps) => (
         { id: 'cat', name: 'Кот' },
         { id: 'dog', name: 'Собака' },
       ]} />
-      <TextInput source="about" label="О питомце" />
-      <TextInput source="description" label="Описание" />
-      <TextInput source="images_url[0]" label="URL фото" />
+      <TextInput source="description" label="Описание" helperText='Краткое описание питомца'/>
+      <TextInput source="about" label="О питомце" helperText='Полное описание питомца'/>
       <DateInput source="birthdate" label="Дата рождения питомца" />
+      <FileInput source="images_url" label="Фотографии" accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.jfif'] }} multiple>
+        <FileField source="title" title="title" />
+      </FileInput>
     </SimpleForm>
   </Create>
 );

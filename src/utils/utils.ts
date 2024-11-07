@@ -19,12 +19,8 @@ function formatAge(birthdate: string) : string{
             return `${months} месяцев`;
         }
     } else {
-        if (months >= 6) {
-            years += 1; 
-        }
-
-        if (years === 1) {
-            return "1 год";
+        if (years % 10 === 1) {
+            return `${years} год`;
         } else if (years >= 2 && years <= 4) {
             return `${years} года`;
         } else {

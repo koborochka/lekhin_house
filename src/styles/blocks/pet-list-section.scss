@@ -72,8 +72,10 @@
     margin-top: auto;
   }
 
-  &__pet-gender {
-    // Пустой стиль, можно использовать для будущих изменений
+  &__load {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 3rem;
   }
 
   &__pet-description {
