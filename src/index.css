@@ -406,6 +406,11 @@ img {
   font-weight: 400;
   margin-top: auto;
 }
+.pets-section__load {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 3rem;
+}
 .pets-section__pet-description {
   line-height: 1.375rem;
   font-weight: 100;

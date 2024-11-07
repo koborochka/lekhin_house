@@ -40,8 +40,9 @@ export const AdoptList: React.FC<AdoptListProps> = () => {
     
 
     return (   
-        isLoading ? <div>Загрузка...</div> :  
         <section className="pets-section wrap">
+            {isLoading ? <div className='pets-section__load'>Загрузка...</div> : 
+            <>
             <div className="pets-section__filter-cont">
                 <ul className="pets-section__type-filter">
                     <li className="pets-section__type-filter-item pets-section__type-filter-item--active">Все</li>
@@ -57,6 +58,7 @@ export const AdoptList: React.FC<AdoptListProps> = () => {
                     </li>
                 ))}
             </ul>
+            </>}
         </section>  
     );
 };
