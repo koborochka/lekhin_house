@@ -1,4 +1,5 @@
 import { Edit, SimpleForm, TextInput, SelectInput, EditProps, DateInput, ImageField, ImageInput } from 'react-admin';
+import { RichTextInput } from 'ra-input-rich-text';
 
 const PetEdit = (props: EditProps) => {
 	return (
@@ -15,8 +16,24 @@ const PetEdit = (props: EditProps) => {
 					{ id: 'dog', name: 'Собака' },
 					{ id: 'cat', name: 'Кот' },
 				]} />
-				<TextInput source="about" label="О питомце" />
 				<TextInput source="description" label="Описание" />
+
+				<RichTextInput 
+					toolbar={[]} 
+					source="about" 
+					label="О питомце" 
+					helperText="Полное описание питомца" 
+					fullWidth 
+					format={(about: string[]) => 
+						// Преобразуем массив строк в HTML-абзацы
+						Array.isArray(about) ? about.map(paragraph => `<p>${paragraph}</p>`).join('') : about
+					}					
+					parse={(about) => 
+						// Преобразуем HTML-абзацы обратно в массив строк
+						about ? about.split(/<\/p>\s*<p>/).map(str => str.replace(/<\/?p>/g, '')) : []
+					}
+					/>
+
 				<ImageInput
 					readOnly={true}
 					source="images_url"

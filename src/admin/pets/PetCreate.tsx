@@ -1,4 +1,5 @@
 import { Create, SimpleForm, TextInput, SelectInput, CreateProps, DateInput, ImageField, ImageInput } from 'react-admin';
+import { RichTextInput } from 'ra-input-rich-text';
 
 const PetCreate = (props: CreateProps) => (
   <Create {...props}>
@@ -14,7 +15,7 @@ const PetCreate = (props: CreateProps) => (
         { id: 'dog', name: 'Собака' },
       ]} />
       <TextInput source="description" label="Описание" helperText='Краткое описание питомца' />
-      <TextInput source="about" label="О питомце" helperText='Полное описание питомца' />
+	  <RichTextInput toolbar={[]} source="about" label="О питомце" helperText='Полное описание питомца' fullWidth />
       <DateInput source="birthdate" label="Дата рождения питомца" />
       <ImageInput 
         source="images_url" 

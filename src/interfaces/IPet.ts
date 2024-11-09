@@ -5,7 +5,7 @@ export default interface IPet{
     birthdate: string,
     gender: 'male'|'female',
     breed: string,
-    about: string,
+    about: string[],
     description: string,
     images_url: [{
         secure_url: string,

@@ -70,10 +70,9 @@ const PetCardFull: React.FC = () => {
                 <div className="more-info__about-pet">
                     <h2 className="more-info__title more-info__about-pet-title">Обо мне</h2>
                     <div className="more-info__text-cont">
-                        {/* {selectedPet.about.map((paragraph, index) => (
+                         {selectedPet.about.map((paragraph, index) => (
                             <p key={index}>{paragraph}</p>
-                        ))} */}
-                        <p>{selectedPet.about}</p>
+                        ))} 
                     </div>
                 </div>
             </div>
