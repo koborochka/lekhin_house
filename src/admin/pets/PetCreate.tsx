@@ -1,5 +1,5 @@
-import { Create, SimpleForm, TextInput, SelectInput, CreateProps, DateInput, FileInput, FileField } from 'react-admin';
-  
+import { Create, SimpleForm, TextInput, SelectInput, CreateProps, DateInput, ImageField, ImageInput } from 'react-admin';
+
 const PetCreate = (props: CreateProps) => (
   <Create {...props}>
     <SimpleForm>
@@ -13,12 +13,17 @@ const PetCreate = (props: CreateProps) => (
         { id: 'cat', name: 'Кот' },
         { id: 'dog', name: 'Собака' },
       ]} />
-      <TextInput source="description" label="Описание" helperText='Краткое описание питомца'/>
-      <TextInput source="about" label="О питомце" helperText='Полное описание питомца'/>
+      <TextInput source="description" label="Описание" helperText='Краткое описание питомца' />
+      <TextInput source="about" label="О питомце" helperText='Полное описание питомца' />
       <DateInput source="birthdate" label="Дата рождения питомца" />
-      <FileInput source="images_url" label="Фотографии" accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.jfif'] }} multiple>
-        <FileField source="title" title="title" />
-      </FileInput>
+      <ImageInput 
+        source="images_url" 
+        label="Фотографии" 
+        accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.jfif'] }} 
+        placeholder="Нажмите, чтобы загрузить новые фотографии или перетащите несколько." 
+        multiple>
+        <ImageField source="src" title="title" />
+      </ImageInput>
     </SimpleForm>
   </Create>
 );

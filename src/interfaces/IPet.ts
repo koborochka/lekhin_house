@@ -7,5 +7,9 @@ export default interface IPet{
     breed: string,
     about: string,
     description: string,
-    images_url: string[],
+    images_url: [{
+        secure_url: string,
+        public_id: string,
+        display_name: string,
+    }],
 }
