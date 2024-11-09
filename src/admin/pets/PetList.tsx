@@ -27,7 +27,7 @@ const PetList = (props: ListProps) => {
         <TextField source="type" label="Тип" sortable={false} />
         <TextField source="about" label="О питомце" sortable={false} />
         <TextField source="description" label="Описание" sortable={false} />
-        <ImageField source="images_url[0]" label="Фото" sortable={false} />
+        <ImageField source="images_url[0].secure_url" label="Фото" sortable={false} />
         <EditButton />
         <DeleteButton />
       </Datagrid>

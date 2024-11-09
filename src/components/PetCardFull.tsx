@@ -48,11 +48,11 @@ const PetCardFull: React.FC = () => {
                     <button className="pet-card__shelter-button btn--blue btn">Приютить</button>
                 </div>
                 <div className="pet-card__gallery">
-                    <img className="pet-card__main-photo" src={selectedPet.images_url[0]} alt={selectedPet.name} />
+                    <img className="pet-card__main-photo" src={selectedPet.images_url[0].secure_url} alt={selectedPet.name} />
                     <ul className="pet-card__slider">
-                        <li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[0]} alt={selectedPet.name} /></a></li>
-                        <li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[0]} alt={selectedPet.name} /></a></li>
-                        <li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[0]} alt={selectedPet.name} /></a></li>
+                        <li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[0].secure_url} alt={selectedPet.name} /></a></li>
+                        <li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[0].secure_url} alt={selectedPet.name} /></a></li>
+                        <li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[0].secure_url} alt={selectedPet.name} /></a></li>
                     </ul> 
                     {/* по адекватному сделать надо */}
                 </div>

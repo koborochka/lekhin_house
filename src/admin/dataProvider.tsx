@@ -8,24 +8,19 @@ const enhancedDataProvider = (apiUrl: string) => {
         ...dataProvider,
         
         create: async (resource: string, params: any) => {
-            if (resource === 'pet' && params.data.images) {
+            if (resource === 'pet' && params.data.images_url) {
                 const formData = new FormData();
                 for (const key in params.data) {
-                    if (key === 'images') {
-                        params.data.images.forEach((file:any) => {
+                    if (key === 'images_url') {
+                        params.data.images_url.forEach((file:any) => {
                             if (file.rawFile instanceof Blob) {
-                                formData.append('images', file.rawFile, file.title);
-                            }
+                                const utf8Title = btoa(unescape(encodeURIComponent(file.title)));
+                                formData.append('images_url', new File([file.rawFile], utf8Title, { type: file.rawFile.type }));                                                            }
                         });
                     } else {
                         formData.append(key, params.data[key]);
                     }
                 }
-
-                for (let pair of formData.entries()) {
-                    console.log(pair[0]+ ', ' + pair[1]);
-                }
-                console.log(formData);
         
                 const url = `${apiUrl}/${resource}`;
         

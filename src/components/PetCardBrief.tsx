@@ -7,10 +7,10 @@ const PetCardBrief: React.FC<{
 }> = ({ petItem }) => {
     return (
         <>
-          {petItem.images_url?.[0] ? (
+          {petItem.images_url[0]?.secure_url ? (
               <img
                   className="pets-section__pet-img"
-                  src={petItem.images_url[0]}
+                  src={petItem.images_url[0].secure_url}
                   alt={petItem.name || "Pet image"}
               />
           ) : (
