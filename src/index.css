@@ -447,8 +447,9 @@ img {
   width: 611.38px;
   height: 170px;
   bottom: 0;
-  left: 0;
-  background-image: url("././assets/icons/footer-bg-item2.svg");
+  left: -120px;
+  rotate: 180deg;
+  background-image: url("././assets/icons/footer-bg-item1.svg");
 }
 
 .footer-cont {
@@ -788,6 +789,7 @@ img {
   border-radius: 20px;
   position: relative;
   overflow: hidden;
+  max-height: 295px;
 }
 .how-to-adopt__step-card--1 {
   background-color: #D2E6FF;
@@ -875,6 +877,7 @@ img {
 }
 
 .how-to-adopt__content {
+  flex-shrink: 10;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -897,8 +900,35 @@ img {
   background-color: #EFF6FF;
   padding: 51px 0;
   overflow: hidden;
+  position: relative;
 }
-
+.ways-to-help__donation-cards-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.ways-to-help__donation-cards-cont::after, .ways-to-help__donation-cards-cont::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 575px;
+  height: 500px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #4796F3;
+}
+.ways-to-help__donation-cards-cont::after {
+  rotate: 20deg;
+  bottom: -200px;
+  right: -180px;
+  z-index: 2;
+}
+.ways-to-help__donation-cards-cont::before {
+  rotate: -170deg;
+  top: -280px;
+  left: -180px;
+}
 .ways-to-help__donation-card {
   background-color: white;
   border-radius: 30px;
@@ -908,6 +938,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
 }
 .ways-to-help__donation-card button {
   font-size: 1.25rem;
@@ -923,12 +954,72 @@ img {
   text-align: center;
   margin-top: 15px;
 }
-
-.ways-to-help__donation-cards-cont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
+.ways-to-help__donation-card:first-child {
+  position: relative;
+}
+.ways-to-help__donation-card:first-child::after, .ways-to-help__donation-card:first-child::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+}
+.ways-to-help__donation-card:first-child::after {
+  width: 256.29px;
+  height: 220.36px;
+  top: 220px;
+  left: -320px;
+  scale: 0.9;
+  transform: scaleX(-1);
+  background-image: url("././assets/icons/drown-cat.svg");
+}
+.ways-to-help__donation-card:first-child .title-h1::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 611.38px;
+  height: 240px;
+  top: 0;
+  right: -630px;
+  background-image: url("././assets/icons/footer-bg-item1.svg");
+  z-index: 2;
+  rotate: 25deg;
+  scale: 0.8;
+}
+.ways-to-help__donation-card:last-child {
+  position: relative;
+}
+.ways-to-help__donation-card:last-child::after, .ways-to-help__donation-card:last-child::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("././assets/icons/animals-line.svg");
+  width: 538px;
+  height: 70px;
+  top: 190px;
+}
+.ways-to-help__donation-card:last-child::after {
+  right: -570px;
+}
+.ways-to-help__donation-card:last-child::before {
+  left: -570px;
+}
+.ways-to-help::after, .ways-to-help::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 1;
+  width: 362.94px;
+  height: 389.15px;
+}
+.ways-to-help::after {
+  top: 220px;
+  right: -153px;
+  background-image: url("././assets/icons/ways-to-help__bg-item--round.svg");
+}
+.ways-to-help::before {
+  top: 11px;
+  left: -215px;
+  rotate: 200deg;
+  background-image: url("././assets/icons/ways-to-help__bg-item--round.svg");
 }
 
 .financial-help {
@@ -994,8 +1085,121 @@ img {
   font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.375rem;
-  text-align: left;
+  text-align: center;
   margin-top: 20px;
+}
+
+.help-other-ways {
+  margin-top: 86px;
+  margin-bottom: 63px;
+}
+.help-other-ways__list {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+.help-other-ways__list li {
+  display: flex;
+  gap: 30px;
+}
+.help-other-ways__list li h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.625rem;
+  margin-bottom: 30px;
+}
+.help-other-ways__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.help-other-ways__content p {
+  font-size: 1.25rem;
+  font-weight: 200;
+  line-height: 1.6875rem;
+}
+.help-other-ways__picture {
+  flex: 0 0 auto;
+  position: relative;
+  width: 155px;
+  max-height: 258px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.help-other-ways__picture::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  left: 20px;
+  background-repeat: no-repeat;
+}
+.help-other-ways__picture--blue {
+  background-color: #D2E6FF;
+}
+.help-other-ways__picture--blue::after {
+  top: 34px;
+  background-image: url("././assets/icons/broom.svg");
+}
+.help-other-ways__picture--pink {
+  background-color: #FFCEE6;
+}
+.help-other-ways__picture--pink::after {
+  top: 17px;
+  background-image: url("././assets/icons/car.svg");
+}
+.help-other-ways__picture--yellow {
+  background-color: #FFE7BD;
+}
+.help-other-ways__picture--yellow::after {
+  top: 59px;
+  background-image: url("././assets/icons/gift.svg");
+}
+
+.shelter-needs {
+  padding: 30px 0;
+  background-color: #EFF6FF;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.shelter-needs h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.625rem;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.shelter-needs__list {
+  display: grid;
+  grid-template-columns: repeat(2, 582.5px);
+  gap: 30px;
+}
+
+.shelter-needs__card {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  border-radius: 10px;
+  gap: 20px;
+}
+.shelter-needs__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.shelter-needs__card-content h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 2rem;
+  margin-bottom: 20px;
+}
+.shelter-needs__card-content p {
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.375rem;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=index.css.map */
