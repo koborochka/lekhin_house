@@ -27,25 +27,27 @@
 
   &__filter-button {
     font-weight: 200;
-    // Пустой стиль, можно использовать для будущих изменений
   }
 
   &__pets-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // Всегда 3 колонки
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px 45px;
   }
 
   &__pet-item {
-    max-width: 100%;
     cursor: pointer;
+	
   }
 
   &__pet-img {
     margin-bottom: 20px;
-    border-radius: 8px;
-    width: 370px; // жесткая разметка, лучше изменить
+	width: 370px; 
     height: 280px;
+
+    border-radius: 8px;
+	object-fit: cover;  
+	overflow: hidden; 
   }
 
   &__pet-info-cont {

@@ -1,5 +1,5 @@
 .main-footer {
-  margin-top: 109px;
+  margin-top: 125px;
   background-color: $header-bg;
   padding: 67px 0;
   position: relative;
@@ -20,13 +20,6 @@
     top: 0;
     right: -120px;
     background-image: url("././assets/icons/footer-bg-item1.svg");
-    
-    // transform: scale(1); // Исходный масштаб
-    // @include smallDeviceSize {
-    //     transform: scale(0.6);
-    //     top: -50px;
-    //     right: -195px;
-    // }
   }
 
   &::before {

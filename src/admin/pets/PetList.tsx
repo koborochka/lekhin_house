@@ -7,17 +7,17 @@ const postFilter = [
   <SelectInput source="type" choices={[
     { id: 'cat', name: 'Коты' },
     { id: 'dog', name: 'Собаки' },
-  ]} />,
+  ]} alwaysOn />,
   <SelectInput source="gender" choices={[
     { id: 'male', name: 'Мальчики' },
     { id: 'female', name: 'Девочки' },
-  ]} />
+  ]} alwaysOn />
 ];
 
 const PetList = (props: ListProps) => {
 
   return (
-    <List {...props} filters={postFilter} sort={{ field: 'age', order: 'ASC' }}>
+    <List {...props} filters={postFilter} >
       <Datagrid>
         <NumberField source="id" />
         <TextField source="name" label="Имя" sortable={false} />

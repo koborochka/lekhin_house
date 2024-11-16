@@ -30,7 +30,8 @@ const enhancedDataProvider = (apiUrl: string) => {
                 });
         
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+					const errorBody = await response.json();
+					throw new Error(errorBody.error || 'Network response was not ok')
                 }
         
                 const result = await response.json();
@@ -74,3 +75,5 @@ const enhancedDataProvider = (apiUrl: string) => {
 };
 
 export default enhancedDataProvider('http://localhost:8080/api');
+
+// export default enhancedDataProvider('https://ctx850k3-8080.euw.devtunnels.ms/api');

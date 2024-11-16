@@ -117,7 +117,7 @@
         width: 100%;
         height: 100%;
         max-width: 590px;
-        max-height: 450px; //подумать как более адекватно сделать это. При разных соотношениях сторон фотки плющит
+        max-height: 450px; 
     }
 
     &__slider {
@@ -127,11 +127,13 @@
 
         &-item {
             img {
-                aspect-ratio: 1 / 1;
-                border-radius: 6px;
-                //подумать как это по нормальному сделать
-                // background: cover;
-                // overflow: hidden; не работают
+				border-radius: 6px;  
+				width: 100%;
+				height: 100%;        /* Высота изображения равна высоте контейнера */
+				max-height: 140px;
+				object-fit: cover;   /* Изображение масштабируется и обрезается, сохраняя пропорции */
+				overflow: hidden;    /* Скрывает обрезанные части */
+				
             }
 
             &--active img {

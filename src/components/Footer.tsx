@@ -23,13 +23,13 @@ const Footer: React.FC = () => {
         </p>
         <div className="footer-cont__social-media-cont">
           <a className="footer-cont__social-media-item" href="#">
-            <img src="src/assets/icons/vk-icon.svg" alt="vk" />
+            <img src="/src/assets/icons/vk-icon.svg" alt="vk" />
           </a>
           <a className="footer-cont__social-media-item" href="#">
-            <img src="src/assets/icons/tg-icon.svg" alt="tg" />
+            <img src="/src/assets/icons/tg-icon.svg" alt="tg" />
           </a>
           <a className="footer-cont__social-media-item" href="#">
-            <img src="src/assets/icons/insta-icon.svg" alt="insta" />
+            <img src="/src/assets/icons/insta-icon.svg" alt="insta" />
           </a>
         </div>
       </div>

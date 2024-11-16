@@ -10,6 +10,5 @@ export default interface IPet{
     images_url: [{
         secure_url: string,
         public_id: string,
-        display_name: string,
     }],
 }

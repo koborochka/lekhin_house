@@ -25,13 +25,11 @@ const PetEdit = (props: EditProps) => {
 					helperText="Полное описание питомца" 
 					fullWidth 
 					format={(about: string[]) => 
-						// Преобразуем массив строк в HTML-абзацы
 						Array.isArray(about) ? about.map(paragraph => `<p>${paragraph}</p>`).join('') : about
 					}					
-					parse={(about) => 
-						// Преобразуем HTML-абзацы обратно в массив строк
-						about ? about.split(/<\/p>\s*<p>/).map(str => str.replace(/<\/?p>/g, '')) : []
-					}
+					parse={(about: string) => 
+                        about ? about.split(/<\/p>\s*<p>/).map((str) => str.replace(/<\/?p>/g, '')) : []
+                    }
 					/>
 
 				<ImageInput
