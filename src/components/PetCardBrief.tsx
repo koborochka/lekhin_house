@@ -14,7 +14,11 @@ const PetCardBrief: React.FC<{
                   alt={petItem.name || "Pet image"}
               />
           ) : (
-              <div className="placeholder">Изображение недоступно</div>
+			<img
+			className="pets-section__pet-img"
+			src={petItem.type === "cat" ? "src/assets/imgs/placeholder--cat.png" : "src/assets/imgs/placeholder--dog.png"}
+			alt={petItem.name || "Pet image not available"}
+		/>
           )}
           <div className="pets-section__pet-info-cont">
               <div className="pets-section__pet-name-age-cont">
