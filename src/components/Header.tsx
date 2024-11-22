@@ -32,7 +32,12 @@ const Header: React.FC = () => {
                         </li>
                         <li>
                             <Link to="/adopt" className={`header-cont__nav-link ${isActive('/adopt')}`}>
-                                Взять питомца
+                                Подопечные
+                            </Link>
+                        </li>
+						<li>
+                            <Link to="/how-to-adopt" className={`header-cont__nav-link ${isActive('/how-to-adopt')}`}>
+                                Как взять питомца
                             </Link>
                         </li>
                         <li>

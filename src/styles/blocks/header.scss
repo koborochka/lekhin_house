@@ -30,13 +30,11 @@
 
         }
         &__nav-cont{
-            flex: 1;
-            max-width: 672px;
         }
 
         &__nav {
             display: flex;
-            justify-content: space-between;
+            gap: 15px;
 
             &-link {
                 font-weight: 200;

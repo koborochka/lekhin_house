@@ -12,6 +12,7 @@ import MainPage from './pages/MainPage';
 import ScrollToTop from './components/ScrollToTop';
 import AdminPage from './admin/AdminPage';
 import React from 'react';
+import HowToAdoptPage from './pages/HowToAdoptPage';
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return(
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/" element={<Layout><MainPage /></Layout>} />
           <Route path="/shelter" element={<Layout><ShelterPage /></Layout>} />
           <Route path="/adopt" element={<Layout><AdoptPage /></Layout>} />
+		  <Route path="/how-to-adopt" element={<Layout><HowToAdoptPage /></Layout>} />
           <Route path="/adopt/:petName" element={<Layout><PetCardPage /></Layout>} />
           <Route path="/news" element={<Layout><NewsPage /></Layout>} />
           <Route path="/contacts" element={<Layout><ContactsPage /></Layout>} />

@@ -127,13 +127,9 @@ img {
   font-weight: 200;
   line-height: 1.2rem;
 }
-.main-header .header-cont__nav-cont {
-  flex: 1;
-  max-width: 672px;
-}
 .main-header .header-cont__nav {
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
 }
 .main-header .header-cont__nav-link {
   font-weight: 200;
