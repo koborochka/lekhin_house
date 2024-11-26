@@ -56,8 +56,8 @@ const PetCardFull: React.FC = () => {
 				}}/>
 					<ul className="pet-card__slider">
 						<li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[0].secure_url} alt={selectedPet.name} /></a></li>
-						<li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[1].secure_url} alt={selectedPet.name} /></a></li>
-						<li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[2].secure_url} alt={selectedPet.name} /></a></li>
+						{/* <li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[1].secure_url} alt={selectedPet.name} /></a></li>
+						<li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[2].secure_url} alt={selectedPet.name} /></a></li> */}
 					</ul>
 					{/* по адекватному сделать надо */}
 				</div>

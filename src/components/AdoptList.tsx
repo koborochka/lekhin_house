@@ -9,18 +9,26 @@ type AdoptListProps = {
    //тут мейби maxLength
 };
 
+type PetFilter = { 
+	type: 'cat' | 'dog' | 'all'
+};
+
 
 export const AdoptList: React.FC<AdoptListProps> = () => {
     const [pets, setPets] = useState<IPet[]>([]);
     const { setSelectedPet } = usePet();
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [activeTypeFilter, setActiveTypeFilter] = useState<PetFilter>({type : 'all'})
 
     useEffect(() => {
-        const fetchPets = async () => {
+        const fetchPets = async (filter : PetFilter) => {
             setIsLoading(true);
             try {
-                const response = await axios.get<IPet[]>('http://localhost:8080/api/pet');         
+
+				const response = await axios.get('http://localhost:8080/api/pet', {
+					params: { filter: JSON.stringify(filter)},
+				});     
 				//const response = await axios.get<IPet[]>('https://ctx850k3-8080.euw.devtunnels.ms/api/pet');       
                 setPets(response.data);
             } catch (error) {
@@ -30,8 +38,12 @@ export const AdoptList: React.FC<AdoptListProps> = () => {
             }
         };
 
-        fetchPets(); 
-    }, []);
+        fetchPets(activeTypeFilter); 
+    }, [activeTypeFilter]);
+
+	const handleFilterTypeChange = (typeFilter: 'cat' | 'dog' | 'all') => {
+        setActiveTypeFilter({type: typeFilter}); 
+    };
 
     const handlePetClick = (pet: IPet) => {
         setSelectedPet(pet); // Устанавливаем питомца в контекст
@@ -45,11 +57,32 @@ export const AdoptList: React.FC<AdoptListProps> = () => {
             {isLoading ? <div className='pets-section__load'>Загрузка...</div> : 
             <>
             <div className="pets-section__filter-cont">
-                <ul className="pets-section__type-filter">
-                    <li className="pets-section__type-filter-item pets-section__type-filter-item--active">Все</li>
-                    <li className="pets-section__type-filter-item">Кошки</li>
-                    <li className="pets-section__type-filter-item">Собаки</li>
-                </ul>
+			<ul className="pets-section__type-filter">
+				<li
+					className={`pets-section__type-filter-item ${
+						activeTypeFilter.type === 'all' ? 'pets-section__type-filter-item--active' : ''
+					}`}
+					onClick={() => handleFilterTypeChange('all')}
+				>
+					Все
+				</li>
+				<li
+					className={`pets-section__type-filter-item ${
+						activeTypeFilter.type === 'cat' ? 'pets-section__type-filter-item--active' : ''
+					}`}
+					onClick={() => handleFilterTypeChange('cat')}
+				>
+					Кошки
+				</li>
+				<li
+					className={`pets-section__type-filter-item ${
+						activeTypeFilter.type === 'dog' ? 'pets-section__type-filter-item--active' : ''
+					}`}
+					onClick={() => handleFilterTypeChange('dog')}
+				>
+					Собаки
+				</li>
+			</ul>
             <div className="pets-section__filter-button">Фильтры</div>           
             </div>
             <ul className="pets-section__pets-list">
