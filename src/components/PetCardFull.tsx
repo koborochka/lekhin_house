@@ -1,16 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePet } from "../context/PetContext";
 import { IoPawSharp } from "react-icons/io5";
 import { IoGift } from "react-icons/io5";
 import { formatAge } from "../utils/utils";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import 'swiper/css';
 
 const PetCardFull: React.FC = () => {
 	const { selectedPet, setSelectedPet } = usePet(); // Получаем питомца из контекста
 
+	const [mainPhoto, setMainPhoto] = useState<string>();
+	const [activePhotoIndex, setActivePhotoIndex] = useState(0);
+
+
 	useEffect(() => {
 		const savedPet = localStorage.getItem('selectedPet');
 		if (savedPet && !selectedPet) {
-			setSelectedPet(JSON.parse(savedPet));
+			const petData = JSON.parse(savedPet);
+			setSelectedPet(petData);
+			setMainPhoto(petData.images_url[0].secure_url);
+		} else if (selectedPet) {
+			setMainPhoto(selectedPet.images_url[0].secure_url);
 		}
 	}, [selectedPet, setSelectedPet]);
 
@@ -48,20 +59,78 @@ const PetCardFull: React.FC = () => {
 					<button className="pet-card__shelter-button btn--blue btn">Приютить</button>
 				</div>
 				<div className="pet-card__gallery">
-					<img className="pet-card__main-photo" src={selectedPet.images_url[0].secure_url} alt={selectedPet.name} onError={(e) => {
-					e.currentTarget.src =
-					selectedPet.type === "cat"
-							? "src/assets/imgs/placeholder--cat.png"
-							: "src/assets/imgs/placeholder--dog.png";
-				}}/>
-					<ul className="pet-card__slider">
-						<li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[0].secure_url} alt={selectedPet.name} /></a></li>
-						{/* <li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[1].secure_url} alt={selectedPet.name} /></a></li>
-						<li className="pet-card__slider-item"><a href=""><img src={selectedPet.images_url[2].secure_url} alt={selectedPet.name} /></a></li> */}
-					</ul>
-					{/* по адекватному сделать надо */}
+					<img className="pet-card__main-photo" src={mainPhoto} alt={selectedPet.name}
+						onError={(e) => {
+							e.currentTarget.src =
+								selectedPet.type === "cat"
+									? "src/assets/imgs/placeholder--cat.png"
+									: "src/assets/imgs/placeholder--dog.png";
+						}} />
+
+					<Swiper
+						tag="ul"
+						className="pet-card__slider"
+						slidesPerView={3}
+						centeredSlides={false} 
+						slideToClickedSlide={true}
+						spaceBetween={15}
+						speed={500}
+						direction="vertical"
+						watchOverflow={true}
+
+						onSwiper={(swiper) => {
+							console.log(swiper.slides)
+						
+						}}
+
+						onSlideChange={(swiper) => {
+							const { activeIndex } = swiper;
+			
+							setActivePhotoIndex(activeIndex);
+			
+							if (activeIndex >= 1) {
+								swiper.params.centeredSlides = true;
+							}
+							else{
+								swiper.params.centeredSlides = false;
+							}
+							swiper.update(); 
+
+						}}
+
+						onSlideChangeTransitionStart={(swiper) => {
+							setMainPhoto(selectedPet.images_url[swiper.activeIndex].secure_url);
+						}}
+					>
+						{selectedPet.images_url.map((image, index) => (
+							<SwiperSlide
+								tag="li"
+								className={`pet-card__slider-item ${activePhotoIndex === index ? 'pet-card__slider-item--active' : ''}`}
+								key={index}
+							>
+								<img 
+								src={image.secure_url} 
+								alt={`${selectedPet.name} ${index + 1}`} 
+								onClick={() => {
+									if (index >= selectedPet.images_url.length - 3) {
+										setMainPhoto(image.secure_url);
+										setActivePhotoIndex(index);
+									}
+								}}
+								onError={(e) => {
+									e.currentTarget.src =
+										selectedPet.type === "cat"
+											? "src/assets/imgs/placeholder--cat.png"
+											: "src/assets/imgs/placeholder--dog.png";
+								}} />
+							</SwiperSlide> 
+							))}
+					</Swiper>
+
+
 				</div>
 			</div>
+		
 
 			<div className="more-info">
 				<div className="more-info__help">
@@ -76,7 +145,7 @@ const PetCardFull: React.FC = () => {
 					<h2 className="more-info__title more-info__about-pet-title">Обо мне</h2>
 					<div className="more-info__text-cont">
 						{selectedPet.about.map((paragraph, index) => (
-							<p key={index}>{paragraph}</p>
+							<p key={index} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
 						))}
 					</div>
 				</div>
