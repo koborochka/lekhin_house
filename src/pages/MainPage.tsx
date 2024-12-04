@@ -4,6 +4,7 @@ import catImage from '../assets/imgs/hero-bg--cat.png';
 import { IoPawSharp } from 'react-icons/io5';
 import { GoHeartFill } from "react-icons/go";
 import { useNavigate } from 'react-router-dom';
+import WaysToHelp from '../components/WaysToHelp';
 
 export default function MainPage() {
     const navigate = useNavigate(); // Хук для навигации
@@ -11,6 +12,10 @@ export default function MainPage() {
     const handleFindPetClick = () => {
         navigate('/adopt'); 
     };
+
+	const handleHowToAdoptClick = () => {
+		navigate('/how-to-adopt');
+	}
 
   return (
     <>
@@ -58,20 +63,22 @@ export default function MainPage() {
         </div>
       </section>
 
+	  <WaysToHelp />
+
       <section className="adopt-steps wrap">
         <h2 className="adopt-steps__title title-h2">
           Как <span className="pink">взять питомца</span> из приюта
         </h2>
         <ul className="adopt-steps__steps">
-          <li className="adopt-steps__step adopt-steps__step--1">
+          <li className="adopt-steps__step adopt-steps__step--1" onClick={handleHowToAdoptClick}>
             <div className="adopt-steps__step-number"></div>
             <p>Заполнить анкету кандидата усыновителя</p>
           </li>
-          <li className="adopt-steps__step adopt-steps__step--2">
+          <li className="adopt-steps__step adopt-steps__step--2" onClick={handleHowToAdoptClick}>
             <div className="adopt-steps__step-number"></div>
             <p>Встретиться с сотрудниками приюта</p>
           </li>
-          <li className="adopt-steps__step adopt-steps__step--3">
+          <li className="adopt-steps__step adopt-steps__step--3" onClick={handleHowToAdoptClick}>
             <div className="adopt-steps__step-number"></div>
             <p>Забрать питомца</p>
           </li>

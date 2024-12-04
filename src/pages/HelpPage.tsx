@@ -1,30 +1,26 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
+import WaysToHelp from '../components/WaysToHelp';
+import { useLocation } from 'react-router-dom';
 
 export default function HelpPage() {
+	const financialRef = useRef<HTMLDivElement | null>(null);
+	const otherWaysRef = useRef<HTMLDivElement | null>(null);
+	const location = useLocation();
+
+	useEffect(() => {
+		const section = location.state?.section;
+		if (section === 'financial-help' && financialRef.current) {
+			financialRef.current.scrollIntoView({ behavior: 'smooth' });
+		} else if (section === 'help-other-ways' && otherWaysRef.current) {
+			otherWaysRef.current.scrollIntoView({ behavior: 'smooth' });
+		}
+		}, [location]);
+
 	return (
 		<section className="donation-section container">
-			<div className="ways-to-help">
-				<div className="ways-to-help__donation-cards-cont">
-					<div className="ways-to-help__donation-card">
-						<h2 className="title-h1">Помочь финансово</h2>
-						<p>Даже самое маленькое пожертвование имеет значение!</p>
-						<button className="btn btn--blue">Сделать пожертвование</button>
-					</div>
-					<div className="ways-to-help__donation-card">
-						<h2 className="title-h1">
-							Помочь <span className="pink">другим</span> способом
-						</h2>
-						<p>
-							Мы всегда рады любой помощи, поэтому, если вы обладаете полезными
-							навыками, свободным временем и желанием помочь бездомным животным,
-							то пишите нам!
-						</p>
-						<button className="btn btn--blue">Подробнее о видах помощи</button>
-					</div>
-				</div>
-			</div>
+			<WaysToHelp />
 
-			<div className="financial-help">
+			<div className="financial-help" ref={financialRef}>
 				<img
 					alt="собака"
 					className="financial-help__img financial-help__img--dog"
@@ -91,7 +87,7 @@ export default function HelpPage() {
 				/>
 			</div>
 
-			<div className="help-other-ways wrap">
+			<div className="help-other-ways wrap" ref={otherWaysRef}>
 				<ul className="help-other-ways__list">
 					<li>
 						<div className="help-other-ways__picture help-other-ways__picture--blue"></div>

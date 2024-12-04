@@ -132,6 +132,7 @@
 				aspect-ratio: 1/1;
                 object-fit: cover;  
                 overflow: hidden; 
+				cursor: pointer;
             }
 
             &--active img {

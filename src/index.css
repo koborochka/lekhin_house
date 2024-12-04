@@ -293,6 +293,7 @@ img {
   aspect-ratio: 1/1;
   object-fit: cover;
   overflow: hidden;
+  cursor: pointer;
 }
 .pet-card__slider-item--active img {
   opacity: 0.5;
@@ -611,7 +612,7 @@ img {
 }
 
 .about-shelter {
-  margin-top: 80px;
+  margin: 80px auto;
   display: flex;
   gap: 30px;
 }
@@ -693,6 +694,7 @@ img {
   padding: 30px 15px 30px 30px;
   border-radius: 20px;
   overflow: hidden;
+  cursor: pointer;
 }
 .adopt-steps__step--1 {
   background-color: #D2E6FF;
@@ -1020,8 +1022,9 @@ img {
 }
 .ways-to-help::before {
   top: 11px;
-  left: -215px;
-  rotate: 200deg;
+  left: -270px;
+  rotate: 30deg;
+  transform: scaleX(-1);
   background-image: url("././assets/icons/ways-to-help__bg-item--round.svg");
 }
 
@@ -1173,25 +1176,23 @@ img {
   text-align: left;
   margin-bottom: 30px;
 }
-
 .shelter-needs__list {
   display: grid;
   grid-template-columns: repeat(2, 582.5px);
   gap: 30px;
 }
-
 .shelter-needs__card {
   background-color: white;
   padding: 20px;
   display: flex;
   border-radius: 10px;
   gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .shelter-needs__card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-
 .shelter-needs__card-content h3 {
   font-size: 1.5rem;
   font-weight: 300;
