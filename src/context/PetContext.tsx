@@ -1,27 +1,36 @@
-import React, { createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import IPet from '../interfaces/IPet';
+import apiClient from '../api/axiosConfig';
 
-type PetContextType = {
-    selectedPet: IPet | null;
-    setSelectedPet: (pet: IPet | null) => void;
+interface PetContextProps {
+	pets: IPet[];
 }
 
-const PetContext = createContext<PetContextType | undefined>(undefined);
+const PetContext = createContext<PetContextProps | undefined>(undefined);
 
 export const PetProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-    const [selectedPet, setSelectedPet] = useState<IPet | null>(null);
+	const [pets, setPets] = useState<IPet[]>([]);
 
-    return (
-        <PetContext.Provider value={{ selectedPet, setSelectedPet }}>
-            {children}
-        </PetContext.Provider>
-    );
+	useEffect(() => {
+		const fetchPets = async () => {
+			try {
+				const response = await apiClient.get('/pet');
+				setPets(response.data);
+			} catch (error) {
+				console.error('Error fetching pets:', error);
+			}
+		};
+
+		fetchPets();
+	}, []);
+
+	return <PetContext.Provider value={{ pets }}>{children}</PetContext.Provider>;
 };
 
 export const usePet = () => {
-    const context = useContext(PetContext);
-    if (!context) {
-        throw new Error('usePet must be used within a PetProvider');
-    }
-    return context;
+	const context = useContext(PetContext);
+	if (!context) {
+		throw new Error('usePet must be used within a PetProvider');
+	}
+	return context;
 };

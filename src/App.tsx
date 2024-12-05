@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/shelter" element={<Layout><ShelterPage /></Layout>} />
           <Route path="/adopt" element={<Layout><AdoptPage /></Layout>} />
 		  <Route path="/how-to-adopt" element={<Layout><HowToAdoptPage /></Layout>} />
-          <Route path="/adopt/:petName" element={<Layout><PetCardPage /></Layout>} />
+          <Route path="/adopt/:petId" element={<Layout><PetCardPage /></Layout>} />
           <Route path="/news" element={<Layout><NewsPage /></Layout>} />
           <Route path="/contacts" element={<Layout><ContactsPage /></Layout>} />
           <Route path="/help" element={<Layout><HelpPage /></Layout>} />
