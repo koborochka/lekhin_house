@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <a className="footer-cont__logo-cont" href="/">
             <img
               className="footer-cont__logo-img"
-              src="src/assets/icons/logo.svg"
+              src="/src/assets/icons/logo.svg"
               alt="logo"
             />
             <div>

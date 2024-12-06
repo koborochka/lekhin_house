@@ -5,12 +5,9 @@ import { IoPawSharp } from 'react-icons/io5';
 import { GoHeartFill } from "react-icons/go";
 import { useNavigate } from 'react-router-dom';
 import WaysToHelp from '../components/WaysToHelp';
-import { usePet } from '../context/PetContext';
 import AdoptListBrief from '../components/AdoptListBrief';
 
 export default function MainPage() {
-	const { pets }  = usePet()
-
     const navigate = useNavigate(); 
 
 	const handleHowToAdoptClick = () => {

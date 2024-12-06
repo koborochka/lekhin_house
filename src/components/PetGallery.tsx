@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ClipLoader } from "react-spinners";
 import placeholderCat from "../assets/imgs/placeholder--cat.png";
@@ -15,12 +15,16 @@ interface PetGalleryProps {
 const PetGallery: React.FC<PetGalleryProps> = ({ imagesUrl, name, type }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [mainPhoto, setMainPhoto] = useState<string>(imagesUrl[0]?.secure_url || "");
-  const [activePhotoIndex, setActivePhotoIndex] = useState(0);
   const [imgError, setImgError] = useState(false);
 
   const handleImageLoad = () => {
     setIsLoading(false);
   };
+
+  useEffect(() => {
+    setMainPhoto(imagesUrl[0]?.secure_url || "");
+    setImgError(false);
+  }, [imagesUrl]);
 
   return (
     <div className="pet-card__gallery">
@@ -28,10 +32,10 @@ const PetGallery: React.FC<PetGalleryProps> = ({ imagesUrl, name, type }) => {
         {isLoading && (
           <div
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				height: "100%",
             }}
           >
             <ClipLoader loading={isLoading} size={40} color="gray" />
@@ -60,7 +64,6 @@ const PetGallery: React.FC<PetGalleryProps> = ({ imagesUrl, name, type }) => {
         watchSlidesProgress={true}
         onSlideChange={(swiper) => {
           const { activeIndex } = swiper;
-          setActivePhotoIndex(activeIndex);
 
           if (activeIndex >= 1) {
             swiper.params.centeredSlides = true;
@@ -76,7 +79,7 @@ const PetGallery: React.FC<PetGalleryProps> = ({ imagesUrl, name, type }) => {
         {imagesUrl.map((image, index) => (
           <SwiperSlide
             tag="li"
-            className={`pet-card__slider-item ${activePhotoIndex === index ? 'pet-card__slider-item--active' : ''}`}
+            className={`pet-card__slider-item ${mainPhoto === image.secure_url ? 'pet-card__slider-item--active' : ''}`}
             key={index}
           >
             <img
@@ -85,7 +88,6 @@ const PetGallery: React.FC<PetGalleryProps> = ({ imagesUrl, name, type }) => {
               onClick={() => {
                 if (index >= imagesUrl.length - 3) {
                   setMainPhoto(image.secure_url);
-                  setActivePhotoIndex(index);
                 }
               }}
               onError={(e) => {
