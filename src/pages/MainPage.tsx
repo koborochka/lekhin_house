@@ -6,16 +6,12 @@ import { GoHeartFill } from "react-icons/go";
 import { useNavigate } from 'react-router-dom';
 import WaysToHelp from '../components/WaysToHelp';
 import { usePet } from '../context/PetContext';
+import AdoptListBrief from '../components/AdoptListBrief';
 
 export default function MainPage() {
 	const { pets }  = usePet()
-	console.log(pets)
 
-    const navigate = useNavigate(); // Хук для навигации
-
-    const handleFindPetClick = () => {
-        navigate('/adopt'); 
-    };
+    const navigate = useNavigate(); 
 
 	const handleHowToAdoptClick = () => {
 		navigate('/how-to-adopt');
@@ -32,7 +28,7 @@ export default function MainPage() {
             Давайте вместе <br /> сделаем жизнь десятков животных <br /> лучше и дадим им шанс <br />
             <span className="pink">обрести семью</span>
           </h1>
-            <button className="hero__find-pet-butt btn--blue btn" onClick={handleFindPetClick}>Найти питомца</button>
+            <button className="hero__find-pet-butt btn--blue btn" onClick={()=>{navigate('/adopt')}}>Найти питомца</button>
         </div>
         <div className="hero__img-cont hero__img-cont--right">
           <img className="hero__img hero__img--cat" src={catImage} alt="кошка" />
@@ -66,6 +62,8 @@ export default function MainPage() {
           </ul>
         </div>
       </section>
+
+	  <AdoptListBrief />
 
 	  <WaysToHelp />
 

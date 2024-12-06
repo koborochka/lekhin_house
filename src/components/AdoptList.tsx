@@ -1,25 +1,18 @@
-import axios from 'axios';
 import IPet from '../interfaces/IPet';
 import PetCardBrief from './PetCardBrief';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { usePet } from '../context/PetContext';
 import { useNavigate } from 'react-router-dom';
-import apiClient from '../api/axiosConfig';
 
-type AdoptListProps = {
-	//тут мейби maxLength
-};
 
 type PetFilter = {
 	type: 'cat' | 'dog' | 'all'
 };
 
-
-export const AdoptList: React.FC<AdoptListProps> = () => {
-	//const [pets, setPets] = useState<IPet[]>([]);
-	const { pets } = usePet();
+export const AdoptList: React.FC = () => {
+	const { pets, isLoading } = usePet();
+	console.log(pets);
 	const navigate = useNavigate();
-	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [activeTypeFilter, setActiveTypeFilter] = useState<PetFilter>({ type: 'all' })
 
 	const handlePetClick = (pet: IPet) => {
@@ -30,7 +23,6 @@ export const AdoptList: React.FC<AdoptListProps> = () => {
 		setActiveTypeFilter({ type: typeFilter });
 	};
 
-	// Фильтрация питомцев по типу
 	const filteredPets = pets.filter(pet =>
 		activeTypeFilter.type === 'all' ? true : pet.type === activeTypeFilter.type
 	);

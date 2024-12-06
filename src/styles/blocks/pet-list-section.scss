@@ -87,3 +87,21 @@
     font-weight: 100;
   }
 }
+
+.brief-list{
+	margin: 80px auto;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+	}
+
+	&__view-all-btn{
+		font-size: 1.25rem;
+		font-weight: 300;
+		line-height: 1.5625rem;
+		text-align: left;
+		padding: 0.75rem 3.75rem;
+	}
+}
