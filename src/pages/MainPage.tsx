@@ -33,7 +33,7 @@ export default function MainPage() {
       </section>
 
       <section className="about-shelter wrap">
-        <div className="our-shelter">
+        <div className="our-shelter" onClick={()=>navigate('/shelter')}>
           <header className="our-shelter__header">
             <img className="our-shelter__logo-img" src={logo} alt="logo" />
             <h2 className="our-shelter__title">Наш приют</h2>

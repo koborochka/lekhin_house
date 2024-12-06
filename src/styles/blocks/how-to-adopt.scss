@@ -1,143 +1,153 @@
 .how-to-adopt {
 	margin-top: 40px;
-}
 
-.how-to-adopt__list {
-	display: flex;
-	flex-direction: column;
-	gap: 80px;
-	margin-top: 50px;
-}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 80px;
+		margin-top: 50px;
+	}
 
-.how-to-adopt__step {
-	display: flex;
-	gap: 40px;
-}
-.how-to-adopt__step-card-wrapper {
-	width: 373px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-.how-to-adopt__step-card {
-	display: flex;
-	max-width: 373px;
-	width: 100%;
-	padding: 30px 15px 30px 30px;
-	border-radius: 20px;
-	position: relative;
-	overflow: hidden;
+	&__step {
+		display: flex;
+		gap: 40px;
 
-	max-height: 295px;
-
-	&--1 {
-		background-color: $step--blue;
-		&::after{
-			background-image: url("././assets/imgs/how-to-adopt__step-card-1-bg.png") ;
+		&-card-wrapper {
+			width: 373px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 		}
-		height: 295px;
-		.how-to-adopt__step-number::after {
-			background-image: url("././assets/icons/number-1.svg");
+
+		&-card {
+			display: flex;
+			max-width: 373px;
+			width: 100%;
+			padding: 30px 15px 30px 30px;
+			border-radius: 20px;
+			position: relative;
+			overflow: hidden;
+			max-height: 295px;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: -206px;
+				left: -204px;
+				background-color: transparent;
+				border-radius: 50%;
+				border: 4px solid white;
+				width: 353px;
+				height: 307px;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: 282px;
+				height: 286px;
+				top: 0;
+				right: -30px;
+				background-repeat: no-repeat;
+			}
+
+			p {
+				margin-top: auto;
+				font-size: 1.5rem;
+				font-weight: 300;
+				line-height: 2rem;
+				text-align: left;
+			}
+
+			&--1 {
+				background-color: $step--blue;
+
+				&::after {
+					background-image: url("././assets/imgs/how-to-adopt__step-card-1-bg.png");
+				}
+
+				height: 295px;
+
+				.how-to-adopt__step-number::after {
+					background-image: url("././assets/icons/number-1.svg");
+				}
+			}
+
+			&--2 {
+				background-color: $step--pink;
+
+				&::after {
+					background-image: url("././assets/imgs/how-to-adopt__step-card-2-bg.png");
+				}
+
+				.how-to-adopt__step-number::after {
+					background-image: url("././assets/icons/number-2.svg");
+				}
+			}
+
+			&--3 {
+				background-color: $step--yellow;
+
+				&::after {
+					background-image: url("././assets/imgs/how-to-adopt__step-card-3-bg.png");
+				}
+
+				.how-to-adopt__step-number::after {
+					background-image: url("././assets/icons/number-3.svg");
+				}
+			}
 		}
 	}
 
-	&--2 {
-		background-color: $step--pink;
-		&::after{
-			background-image: url("././assets/imgs/how-to-adopt__step-card-2-bg.png") ;
+	&__step-number {
+		position: absolute;
+		border-radius: 50%;
+		width: 90px;
+		height: 90px;
+		background-color: white;
+		top: 30px;
+		left: 30px;
+
+		&::after {
+			content: "";
+			position: absolute;
+			background-repeat: no-repeat;
+			background-size: contain;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 18.5px;
+			height: 40px;
 		}
-		.how-to-adopt__step-number::after {
-			background-image: url("././assets/icons/number-2.svg");
-		}   
 	}
 
-	&--3 {
-		background-color: $step--yellow;
-		&::after{
-			background-image: url("././assets/imgs/how-to-adopt__step-card-3-bg.png") ;
-		}
-		.how-to-adopt__step-number::after {
-			background-image: url("././assets/icons/number-3.svg");
-		}
-	}
-
-	p {
-		margin-top: auto;
+	&__questionnaire {
+		padding: 1rem 2.25rem;
+		width: 100%;
 		font-size: 1.5rem;
 		font-weight: 300;
 		line-height: 2rem;
-		text-align: left;
 	}
 
-	&::before {
-		content: '';
-		position: absolute;
-		top: -206px;
-		left: -204px;
-		background-color: transparent;
-		border-radius: 50%;
-		border: 4px solid white;
-		width: 353px;
-		height: 307px;
-	}
+	&__content {
+		flex-shrink: 10;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		max-width: 787px;
 
-	&:after {
-		content: '';
-		position: absolute;
-		width: 282px;
-		height: 286px;
-		top: 0px;
-		right: -30px;
-		background-repeat: no-repeat;
-    }
-}
-
-.how-to-adopt__step-number {
-	position: absolute;
-	border-radius: 50%;
-	width: 90px;
-	height: 90px;
-	background-color: white;
-	top: 30px;
-	left: 30px;
-
-	&::after {
-		content: '';
-		position: absolute;
-		background-repeat: no-repeat;
-		background-size: contain;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 18.5px;
-		height: 40px;
-	}
-}
-.how-to-adopt__questionnaire {
-	padding: 1rem 2.25rem;
-	width: 100%;
-	font-size: 1.5rem;
-	font-weight: 300;
-	line-height: 2rem;
-
-}
-.how-to-adopt__content {
-	flex-shrink: 10;
-	display: flex;
-	flex-direction: column;
-	gap:12px;
-	max-width: 787px;
-
-	p, li{
+		p,
+		li {
 			font-size: 1.25rem;
 			font-weight: 200;
 			line-height: 1.6875rem;
 			text-align: left;
-	}
-}
+		}
 
-.how-to-adopt__content ol{
-	list-style-type: decimal; 
-    margin-left: 1.5rem;
-    padding-left: 0; 
+		ol {
+			list-style-type: decimal;
+			margin-left: 1.5rem;
+			padding-left: 0;
+		}
+	}
 }
