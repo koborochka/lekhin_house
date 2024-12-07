@@ -51,8 +51,8 @@ const PetCardBrief: React.FC<{ petItem: IPet }> = ({ petItem }) => {
 					className="pets-section__pet-gender"
 					src={
 						petItem.gender === "male"
-							? "src/assets/icons/male-icon.svg"
-							: "src/assets/icons/female-icon.svg"
+							? "/src/assets/icons/male-icon.svg"
+							: "/src/assets/icons/female-icon.svg"
 					}
 					alt=""
 				/>

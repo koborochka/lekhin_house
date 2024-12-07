@@ -11,7 +11,6 @@ type PetFilter = {
 
 export const AdoptList: React.FC = () => {
 	const { pets, isLoading } = usePet();
-	console.log(pets);
 	const navigate = useNavigate();
 	const [activeTypeFilter, setActiveTypeFilter] = useState<PetFilter>({ type: 'all' })
 
