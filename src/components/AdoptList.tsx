@@ -3,60 +3,60 @@ import PetCardBrief from './PetCardBrief';
 import { useState } from 'react';
 import { usePet } from '../context/PetContext';
 import { useNavigate } from 'react-router-dom';
+import {FilterList} from './FilterList';
 
 
-type PetFilter = {
-	type: 'cat' | 'dog' | 'all'
+export type PetFilter = {
+	type: 'cat' | 'dog' | 'all',
+	age: {
+		underOne: boolean,
+		oneToFive: boolean,
+		fiveToTen: boolean,
+		overTen: boolean,
+	}
 };
 
 export const AdoptList: React.FC = () => {
 	const { pets, isLoading } = usePet();
+	const [activeFilters, setActiveFilters] = useState<PetFilter>({ type: 'all', age:{
+		underOne: false,
+        oneToFive: false,
+        fiveToTen: false,
+        overTen: false,    
+	}})
+
 	const navigate = useNavigate();
-	const [activeTypeFilter, setActiveTypeFilter] = useState<PetFilter>({ type: 'all' })
 
 	const handlePetClick = (pet: IPet) => {
 		navigate(`/adopt/${pet.id}`);
 	};
 
-	const handleFilterTypeChange = (typeFilter: 'cat' | 'dog' | 'all') => {
-		setActiveTypeFilter({ type: typeFilter });
-	};
+	const filteredPets = pets.filter(pet => {
+        const birthDate = new Date(pet.birthdate);
+        const now = new Date();
+        let years = now.getFullYear() - birthDate.getFullYear();
 
-	const filteredPets = pets.filter(pet =>
-		activeTypeFilter.type === 'all' ? true : pet.type === activeTypeFilter.type
-	);
+        const typeMatches = activeFilters.type === 'all' || pet.type === activeFilters.type;
+
+		const allAgeFiltersFalse = Object.values(activeFilters.age).every(value => !value);
+
+        const ageMatches = allAgeFiltersFalse ||
+            (activeFilters.age.underOne && years < 1) ||
+            (activeFilters.age.oneToFive && years >= 1 && years <= 5) ||
+            (activeFilters.age.fiveToTen && years > 5 && years <= 10) ||
+            (activeFilters.age.overTen && years > 10);
+
+        return typeMatches && ageMatches;
+    });
+
 
 
 	return (
 		<section className="pets-section wrap">
 			{isLoading ? <div className='pets-section__load'>Загрузка...</div> :
 				<>
-					<div className="pets-section__filter-cont">
-						<ul className="pets-section__type-filter">
-							<li
-								className={`pets-section__type-filter-item ${activeTypeFilter.type === 'all' ? 'pets-section__type-filter-item--active' : ''
-									}`}
-								onClick={() => handleFilterTypeChange('all')}
-							>
-								Все
-							</li>
-							<li
-								className={`pets-section__type-filter-item ${activeTypeFilter.type === 'cat' ? 'pets-section__type-filter-item--active' : ''
-									}`}
-								onClick={() => handleFilterTypeChange('cat')}
-							>
-								Кошки
-							</li>
-							<li
-								className={`pets-section__type-filter-item ${activeTypeFilter.type === 'dog' ? 'pets-section__type-filter-item--active' : ''
-									}`}
-								onClick={() => handleFilterTypeChange('dog')}
-							>
-								Собаки
-							</li>
-						</ul>
-						<div className="pets-section__filter-button">Фильтры</div>
-					</div>
+					<FilterList {...{ activeFilters, setActiveFilters }} />
+					{filteredPets.length > 0 ? 
 					<ul className="pets-section__pets-list">
 						{filteredPets?.map(pet => (
 							<li className="pets-section__pet-item" key={pet.id} onClick={() => handlePetClick(pet)}>
@@ -64,6 +64,7 @@ export const AdoptList: React.FC = () => {
 							</li>
 						))}
 					</ul>
+					: <div className='pets-section__empty-pets'>По указанным фильтрам питомцев в данный момент нет.</div>}
 				</>}
 		</section>
 	);

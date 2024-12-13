@@ -1,94 +1,141 @@
 .pets-section {
-  margin-top: 40px;
-  margin-bottom: 125px;
+	margin-top: 40px;
+	margin-bottom: 125px;
 
-  &__filter-cont {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
+	&__filter-cont {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 15px;
+	}
 
-  &__type-filter {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
+	&__type-filter {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+	}
 
-  &__type-filter-item {
-    line-height: 1.375rem;
-    font-weight: 200;
-	padding: 0.3125rem 1.5625rem;
-	border: 1px solid transparent;
+	&__type-filter-item {
+		line-height: 1.375rem;
+		font-weight: 200;
+		padding: 0.3125rem 1.5625rem;
+		border: 1px solid transparent;
 
-    cursor: pointer;
+		cursor: pointer;
 
-    &--active {
-      border-color: black;
-      border-radius: 20px;
-    }
-  }
+		&--active {
+			border-color: black;
+			border-radius: 20px;
+		}
+	}
 
-  &__filter-button {
-    font-weight: 200;
-  }
+	&__filter-button {
+		font-weight: 200;
+	}
 
-  &__pets-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px 45px;
-  }
+	&__pets-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px 45px;
+	}
 
-  &__pet-item {
-    cursor: pointer;
-  }
+	&__pet-item {
+		cursor: pointer;
+	}
 
-  &__pet-img {
-    margin-bottom: 20px;
-	width: 370px; 
-    height: 280px;
+	&__pet-img {
+		margin-bottom: 20px;
+		width: 370px;
+		height: 280px;
 
-    border-radius: 8px;
-	object-fit: cover;  
-	overflow: hidden; 
-  }
+		border-radius: 8px;
+		object-fit: cover;
+		overflow: hidden;
+	}
 
-  &__pet-info-cont {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 14px;
-  }
+	&__pet-info-cont {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 14px;
+	}
 
-  &__pet-name-age-cont {
-    display: flex;
-    gap: 15px;
-  }
+	&__pet-name-age-cont {
+		display: flex;
+		gap: 15px;
+	}
 
-  &__pet-name {
-    font-weight: 300;
-    font-size: 2rem;
-    line-height: 2.4rem;
-    margin-top: auto;
-  }
+	&__pet-name {
+		font-weight: 300;
+		font-size: 2rem;
+		line-height: 2.4rem;
+		margin-top: auto;
+	}
 
-  &__pet-age {
-    line-height: 1.375rem;
-    font-weight: 400;
-    margin-top: auto;
-  }
+	&__pet-age {
+		line-height: 1.375rem;
+		font-weight: 400;
+		margin-top: auto;
+	}
 
-  &__load {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 3rem;
-  }
+	&__load {
+		margin-top: 30px;
+		text-align: center;
+		font-size: 3rem;
+	}
 
-  &__pet-description {
-    line-height: 1.375rem;
-    font-weight: 100;
-  }
+	&__empty-pets{
+		margin-top: 50px;
+		text-align: center;
+		font-size: 2.5rem;
+	}
+	
+
+	&__pet-description {
+		line-height: 1.375rem;
+		font-weight: 100;
+	}
+
+	&__filters-container {
+		position: relative;
+		font-size: 1rem;
+		font-weight: 200;
+		line-height: 22px;
+		cursor: pointer;
+
+
+		.filter-container {
+			position: absolute;
+			top: 38px;
+			right: 0;
+			width: 202px;
+			background-color: white;
+			padding: 20px;
+			padding-top: 12px;
+			border-radius: 8px;
+			box-shadow: 0px 4px 8px 0px #52759e40;
+		}
+
+		.filter-title {
+			font-size: 1rem;
+			font-weight: 300;
+			line-height: 1.25rem;
+		}
+
+		.age-filter-items-container {
+			margin-top: 8px;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			li {
+				font-size: 14px;
+				font-weight: 200;
+				line-height: 17.5px;
+			}
+		}
+	}
 }
 
-.brief-list{
+.brief-list {
 	margin: 80px auto;
 
 	&__container {
@@ -97,7 +144,7 @@
 		margin-bottom: 20px;
 	}
 
-	&__view-all-btn{
+	&__view-all-btn {
 		font-size: 1.25rem;
 		font-weight: 300;
 		line-height: 1.5625rem;

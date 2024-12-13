@@ -22,6 +22,10 @@ body {
   @include min-max(320px, 1200px);
 }
 
+.hidden{
+	display: none;
+}
+
 p,
 a,
 button {

@@ -56,7 +56,7 @@ const PetCardFull: React.FC = () => {
 							<p className="pet-card__info-value" id="pet-card__age">{formatAge(selectedPet.birthdate)}</p>
 						</li>
 					</ul>
-					<button className="pet-card__shelter-button btn--blue btn">Приютить</button>
+					<button className="pet-card__shelter-button btn--blue btn" onClick={()=>navigate('/how-to-adopt')}>Приютить</button>
 				</div>
 
 				<PetGallery imagesUrl={selectedPet.images_url} name={selectedPet.name} type={selectedPet.type} />
@@ -66,8 +66,8 @@ const PetCardFull: React.FC = () => {
 				<div className="more-info__help">
 					<h2 className="more-info__title more-info__help-title">Как помочь?</h2>
 					<div className="more-info__buttons-cont">
-						<button className="more-info__button more-info__button--shelter btn--white btn"><IoPawSharp size={24} /> Приютить</button>
-						<button className="more-info__button more-info__button--donation btn--white btn"><IoGift size={24} />Отправить пожертвование</button>
+						<button className="more-info__button more-info__button--shelter btn--white btn" onClick={()=>navigate('/how-to-adopt')}><IoPawSharp size={24} /> Приютить</button>
+						<button className="more-info__button more-info__button--donation btn--white btn" onClick={()=>navigate('/help')}><IoGift size={24} />Отправить пожертвование</button>
 					</div>
 				</div>
 				<div className="more-info__about-pet">
