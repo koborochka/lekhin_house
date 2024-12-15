@@ -14,16 +14,27 @@ export type PetFilter = {
 		fiveToTen: boolean,
 		overTen: boolean,
 	}
+	gender:{
+		male: boolean,
+        female: boolean,
+	}
 };
 
 export const AdoptList: React.FC = () => {
 	const { pets, isLoading } = usePet();
-	const [activeFilters, setActiveFilters] = useState<PetFilter>({ type: 'all', age:{
-		underOne: false,
-        oneToFive: false,
-        fiveToTen: false,
-        overTen: false,    
-	}})
+	const [activeFilters, setActiveFilters] = useState<PetFilter>({ 
+		type: 'all',
+		 age:{
+			underOne: false,
+			oneToFive: false,
+			fiveToTen: false,
+			overTen: false,
+		},
+		gender:{
+			male: false,
+			female: false,
+		}
+})
 
 	const navigate = useNavigate();
 
@@ -39,14 +50,19 @@ export const AdoptList: React.FC = () => {
         const typeMatches = activeFilters.type === 'all' || pet.type === activeFilters.type;
 
 		const allAgeFiltersFalse = Object.values(activeFilters.age).every(value => !value);
+		const allGenderFiltersFalse = Object.values(activeFilters.gender).every(value => !value);
 
+		const genderMatches = allGenderFiltersFalse || 
+			(activeFilters.gender.male && pet.gender === 'male') ||
+			(activeFilters.gender.female && pet.gender === 'female');
+		
         const ageMatches = allAgeFiltersFalse ||
             (activeFilters.age.underOne && years < 1) ||
             (activeFilters.age.oneToFive && years >= 1 && years <= 5) ||
             (activeFilters.age.fiveToTen && years > 5 && years <= 10) ||
             (activeFilters.age.overTen && years > 10);
 
-        return typeMatches && ageMatches;
+        return typeMatches && ageMatches && genderMatches;
     });
 
 

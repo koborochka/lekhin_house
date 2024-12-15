@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
 import AgeFilter from './AgeFilter';
 import { PetFilter } from './AdoptList';
+import GenderFilter from './GenderFilter';
 
 
 type FilterListProps = {
@@ -68,6 +69,7 @@ export const FilterList: React.FC<FilterListProps> = ({ activeFilters, setActive
 				Фильтры  {isFiltersVisible ? <GoChevronUp size={25} /> : <GoChevronDown size={25} />} 
 				<div className={`filter-container ${isFiltersVisible ? '' : 'hidden'}`}>
 					<AgeFilter {...{ activeFilters, setActiveFilters }} />
+					<GenderFilter {...{ activeFilters, setActiveFilters }} />
 				</div>
 			</div>
 		</div>

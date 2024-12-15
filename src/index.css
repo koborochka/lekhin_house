@@ -451,6 +451,9 @@ img {
   border-radius: 8px;
   box-shadow: 0px 4px 8px 0px rgba(82, 117, 158, 0.2509803922);
 }
+.pets-section__filters-container .filter-item-cont {
+  margin-top: 16px;
+}
 .pets-section__filters-container .filter-title {
   font-size: 1rem;
   font-weight: 300;
@@ -929,6 +932,7 @@ img {
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 2rem;
+  text-align: center;
 }
 .how-to-adopt__content {
   flex-shrink: 10;

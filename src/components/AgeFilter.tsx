@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Checkbox from '@mui/joy/Checkbox';
 import { PetFilter } from './AdoptList';
 
@@ -28,7 +27,7 @@ export default function AgeFilter({ activeFilters, setActiveFilters }:{
 	};
 
 	return (
-		<>
+		<div>
 			<span className="filter-title">Возраст</span>
 			<ul className="age-filter-items-container">
 				{ageFilterOptions.map(({ key, label }) => (
@@ -43,6 +42,6 @@ export default function AgeFilter({ activeFilters, setActiveFilters }:{
 					</li>
 				))}
 			</ul>
-		</>
+		</div>
 	);
 }
