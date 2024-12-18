@@ -13,11 +13,22 @@
 		display: flex;
 		gap: 40px;
 
+		@include smallDeviceSize {
+			flex-direction: column;
+			width: 90%;
+			margin: 0 auto;
+		}
+
 		&-card-wrapper {
 			width: 373px;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+
+			@include smallDeviceSize {
+				gap: 15px;
+				width: 100%;
+			}
 		}
 
 		&-card {
@@ -29,6 +40,10 @@
 			position: relative;
 			overflow: hidden;
 			max-height: 295px;
+
+			@include smallDeviceSize {
+				height: 280px;
+			}
 
 			&::before {
 				content: "";

@@ -7,10 +7,21 @@ html {
     font-size: 12px; // Этот стиль будет применен только на экранах шириной до 768px
   }
 
+  @include phoneDeviceSize {
+    font-size: 10px; // Этот стиль будет применен только на экранах шириной до 450px
+  }
+
 }
 
 body {
   font-family: 'Geologica', sans-serif; 
+
+  -webkit-tap-highlight-color: transparent; 
+  outline: none;
+
+  &:focus{
+	outline: none;
+  }
 }
   
 .container {

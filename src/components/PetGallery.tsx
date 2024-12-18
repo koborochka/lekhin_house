@@ -60,6 +60,14 @@ const PetGallery: React.FC<PetGalleryProps> = ({ imagesUrl, name, type }) => {
         spaceBetween={15}
         speed={500}
         direction="vertical"
+		breakpoints={{
+			0: { 
+			  direction: "horizontal", 
+			},
+			768: { 
+			  direction: "vertical", 
+			},
+		  }}
         watchOverflow={true}
         watchSlidesProgress={true}
         onSlideChange={(swiper) => {

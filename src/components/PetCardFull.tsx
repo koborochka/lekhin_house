@@ -81,7 +81,7 @@ const PetCardFull: React.FC = () => {
 			</div>
 
 			<div className="other-pets">
-				<h2 className="more-info__title">Другие питомцы</h2>
+				<h2 className="other-pets__title more-info__title">Другие питомцы</h2>
 				<ul className="pets-section__pets-list">
 					{pets
 						?.filter((pet) => pet.id !== selectedPet.id)

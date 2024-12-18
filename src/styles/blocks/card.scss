@@ -26,14 +26,25 @@
             color: $light-gray;
         }
     }
+
+	@include smallDeviceSize {
+		max-width: 90%;
+		margin: 0 auto;
+	}
 }
 
 .pet-card {
     display: flex;
     margin-top: 30px;
     gap: 55px;
-    max-height: 450px;
     position: relative;
+	max-height: auto;
+	height: fit-content;
+
+	@include smallDeviceSize {
+		flex-direction: column;	
+		gap: 30px;
+	}
 
     &::before {
         content: "";
@@ -45,6 +56,10 @@
         left: -110px;
         background-image: url("././assets/icons/card-bg-item.svg");
         z-index: -1;
+
+		@include smallDeviceSize {
+			display: none;
+		}
     }
 
     &__description {
@@ -53,6 +68,12 @@
         flex: 1;
         max-width: 400px;
         max-height: 470px;
+
+		@include smallDeviceSize {
+			max-width: 90%;
+			width: 100%;
+			margin: 0 auto;
+		}
     }
 
     &__name {
@@ -101,6 +122,10 @@
             background-color: white;
             color: $header-link-bg;
         }
+
+		@include smallDeviceSize {
+			margin-top: 15px;
+		}
     }
 
     &__gallery {
@@ -109,6 +134,12 @@
         max-width: 745px;
         grid-template-columns: 59fr 14fr;
         aspect-ratio: 59 / 14;
+
+		@include smallDeviceSize {
+			grid-template-columns: 1fr;
+			aspect-ratio: initial;
+			height: auto;
+		}
     }
 
     &__main-photo {
@@ -116,6 +147,12 @@
         max-width: 590px; 
         height: 450px;
         object-fit: cover;
+
+		@include smallDeviceSize {
+			max-width: 90%;
+			height: auto;
+			margin: 0 auto;
+		}
     }
 
     &__slider {
@@ -123,6 +160,12 @@
         grid-template-rows: repeat(3, 1fr);
         overflow: hidden;  
         height: 100%;  
+
+		@include smallDeviceSize {
+			max-width: 90%;
+			grid-template-rows: none;
+			grid-template-columns: repeat(3, 1fr);
+		}
         
         &-item {
             img {
@@ -133,6 +176,11 @@
                 object-fit: cover;  
                 overflow: hidden; 
 				cursor: pointer;
+
+				@include smallDeviceSize {
+					max-width: 100%;  
+					height: auto;
+				}
             }
 
             &--active img {
@@ -147,6 +195,13 @@
     display: flex;
     margin-top: 70px;
     gap: 56px;
+
+	@include smallDeviceSize {
+		max-width: 90%;
+		margin: 0 auto;
+		margin-top: 30px;
+		flex-direction: column;
+	}
 
     &__help {
         display: flex;
@@ -203,4 +258,11 @@
 .other-pets{
 	margin-top: 70px;
 	margin-bottom: 125px;
+
+	&__title{
+		@include smallDeviceSize{ 
+			max-width: 90%;
+			margin: 0 auto 30px auto;
+		}
+	}
 }

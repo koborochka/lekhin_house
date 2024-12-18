@@ -11,6 +11,10 @@
 		position: absolute;
 		background-repeat: no-repeat;
 		z-index: -1;
+
+		@include smallDeviceSize {
+			display: none;
+		}
 	}
 
 	&::after {

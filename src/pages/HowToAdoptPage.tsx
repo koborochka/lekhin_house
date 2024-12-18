@@ -12,7 +12,7 @@ export default function HowToAdoptPage() {
 							<div className="how-to-adopt__step-number"></div>
 							<p>Заполнить анкету кандидата усыновителя</p>
 						</div>
-						<a className="how-to-adopt__questionnaire btn--blue btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdMDZCPjXvjyNUodO9jSmQa4DucoirmjWokRUb6frbNmiM7Jw/viewform?usp=sharing">
+						<a className="how-to-adopt__questionnaire btn--blue btn" href="https://docs.google.com/forms/d/e/1FAIpQLSctFT7xX2hfXbKv4a3h1Scu9vhBHt42pRGr-lbp8G3_9nDkew/viewform?usp=dialog">
 							Анкета
 						</a>
 					</div>

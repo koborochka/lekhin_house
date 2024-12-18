@@ -10,6 +10,10 @@
 
 		img{
 			flex: 1;
+
+			@include smallDeviceSize {
+				display: none;
+			}
 		}
 	}
 
@@ -18,6 +22,11 @@
 		flex-direction: column;
 		gap:12px;
 		max-width: 680px;
+
+		@include smallDeviceSize {
+			width: 95%;
+			margin: 0 auto;
+		}
 	
 		p{
 			font-size: 1rem;
@@ -75,9 +84,14 @@
 	&__swiper {
 	  width: 60%;
 	  height: 80%;
+	  @include smallDeviceSize{
+		width: 90%;
+	  	height: 90%;
+	  }
 	}
   
 	&__image {
+	  object-fit: contain;
 	  width: auto;
 	  height: 100%;
 	  border-radius: 10px;

@@ -18,24 +18,26 @@
 			width: 575px;
 			height: 500px;
 			background-color: transparent;
-            border-radius: 50%;
-            border: 2px solid $header-link-bg;
+			border-radius: 50%;
+			border: 2px solid $header-link-bg;
+
+			@include smallDeviceSize {
+				display: none;
+			}
 		}
 
-		&::after{
+		&::after {
 			rotate: 20deg;
 			bottom: -200px;
 			right: -180px;
 			z-index: 2;
-
 		}
 
-		&::before{
+		&::before {
 			rotate: -170deg;
-            top: -280px;
-            left: -180px;
+			top: -280px;
+			left: -180px;
 		}
-
 	}
 
 	&__donation-card {
@@ -48,7 +50,11 @@
 		flex-direction: column;
 		align-items: center;
 
-		z-index: 10;
+		z-index: 4;
+
+		@include smallDeviceSize {
+			width: 95%;
+		}
 
 		button {
 			font-size: 1.25rem;
@@ -65,13 +71,17 @@
 			margin-top: 15px;
 		}
 
-		&:first-child{
+		&:first-child {
 			position: relative;
 			&::after,
 			&::before {
 				content: "";
 				position: absolute;
 				background-repeat: no-repeat;
+
+				@include smallDeviceSize {
+					display: none;
+				}
 			}
 
 			&::after {
@@ -94,7 +104,7 @@
 				background-image: url("././assets/icons/heart-with-curl.svg");
 			}
 
-			.title-h1 {			
+			.title-h1 {
 				&::before {
 					content: "";
 					position: absolute;
@@ -108,27 +118,35 @@
 					rotate: 25deg;
 					scale: 0.8;
 
+					@include smallDeviceSize {
+						display: none;
+					}
+
 				}
 			}
 		}
 
-		&:last-child{
+		&:last-child {
 			position: relative;
-            &::after,
-            &::before {
-                content: "";
-                position: absolute;
-                background-repeat: no-repeat;
+			&::after,
+			&::before {
+				content: "";
+				position: absolute;
+				background-repeat: no-repeat;
 				background-image: url("././assets/icons/animals-line.svg");
 				width: 538px;
 				height: 70px;
 				top: 190px;
-            }
 
-			&::after{
+				@include smallDeviceSize {
+					display: none;
+				}
+			}
+
+			&::after {
 				right: -570px;
 			}
-			&::before{
+			&::before {
 				left: -570px;
 			}
 		}
@@ -142,6 +160,10 @@
 		z-index: 1;
 		width: 362.94px;
 		height: 389.15px;
+
+		@include smallDeviceSize {
+			display: none;
+		}
 	}
 
 	&::after {
@@ -237,6 +259,12 @@
 
 		margin-top: 20px;
 	}
+
+	&__img{
+		@include smallDeviceSize {
+			display: none;
+		}
+	}
 }
 
 .help-other-ways {
@@ -326,48 +354,61 @@
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
-  
+	
+	
+
 	h2 {
-	  font-size: 2rem;
-	  font-weight: 400;
-	  line-height: 2.625rem;
-	  text-align: left;
-	  margin-bottom: 30px;
+		font-size: 2rem;
+		font-weight: 400;
+		line-height: 2.625rem;
+		text-align: left;
+		margin-bottom: 30px;
+		@include smallDeviceSize {
+			max-width: 95%;
+			margin: 0 auto 30px auto;	
+		}
 	}
-  
+
 	&__list {
-	  display: grid;
-	  grid-template-columns: repeat(2, 582.5px);
-	  gap: 30px;
+		display: grid;
+		grid-template-columns: repeat(2, 582.5px);
+		gap: 30px;
+
+		@include smallDeviceSize {
+			max-width: 95%;
+			margin: 0 auto;
+			grid-template-columns: repeat(1, 1fr);
+		}
+		
 	}
-  
+
 	&__card {
-	  background-color: white;
-	  padding: 20px;
-	  display: flex;
-	  border-radius: 10px;
-	  gap: 20px;
-	  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-	  &:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-	  }
-  
-	  &-content {
-		h3 {
-		  font-size: 1.5rem;
-		  font-weight: 300;
-		  line-height: 2rem;
-		  margin-bottom: 20px;
+		background-color: white;
+		padding: 20px;
+		display: flex;
+		border-radius: 10px;
+		gap: 20px;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 		}
-  
-		p {
-		  font-size: 1rem;
-		  font-weight: 200;
-		  line-height: 1.375rem;
-		  margin-bottom: 1rem;
+
+		&-content {
+			h3 {
+				font-size: 1.5rem;
+				font-weight: 300;
+				line-height: 2rem;
+				margin-bottom: 20px;
+			}
+
+			p {
+				font-size: 1rem;
+				font-weight: 200;
+				line-height: 1.375rem;
+				margin-bottom: 1rem;
+			}
 		}
-	  }
 	}
 }

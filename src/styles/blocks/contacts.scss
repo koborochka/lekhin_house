@@ -10,6 +10,11 @@
 		flex-direction: column;
 		width: 573px;
 		gap: 15px;
+
+		@include smallDeviceSize {
+			width: 90%;
+			margin-bottom: 340px; 
+		}
 	}
 
 	&__item {
