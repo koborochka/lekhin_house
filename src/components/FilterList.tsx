@@ -15,10 +15,11 @@ export const FilterList: React.FC<FilterListProps> = ({ activeFilters, setActive
 	const filterRef = useRef<HTMLDivElement>(null);
 
 	const handleToggleFilters = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (e.target === e.currentTarget) {
+		if (e.target === e.currentTarget || (e.target as HTMLElement).closest('svg')) {
 		  setFiltersVisible(!isFiltersVisible);
 		}
 	  };
+	  
 
 
   useEffect(() => {
