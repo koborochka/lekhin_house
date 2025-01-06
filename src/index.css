@@ -470,6 +470,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-width: 746px;
 }
 .more-info__text-cont p {
   font-size: 1.25rem;
