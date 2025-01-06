@@ -43,27 +43,35 @@ export const AdoptList: React.FC = () => {
 	};
 
 	const filteredPets = pets.filter(pet => {
-        const birthDate = new Date(pet.birthdate);
-        const now = new Date();
-        let years = now.getFullYear() - birthDate.getFullYear();
+		const birthDate = new Date(pet.birthdate);
+		const now = new Date();
 
-        const typeMatches = activeFilters.type === 'all' || pet.type === activeFilters.type;
-
+		let years = now.getFullYear() - birthDate.getFullYear();
+		let months = now.getMonth() - birthDate.getMonth();
+		let days = now.getDate() - birthDate.getDate();
+	
+		if (months < 0 || (months === 0 && days < 0)) {
+			years -= 1;
+		}
+	
+		const typeMatches = activeFilters.type === 'all' || pet.type === activeFilters.type;
+	
 		const allAgeFiltersFalse = Object.values(activeFilters.age).every(value => !value);
 		const allGenderFiltersFalse = Object.values(activeFilters.gender).every(value => !value);
-
+	
 		const genderMatches = allGenderFiltersFalse || 
 			(activeFilters.gender.male && pet.gender === 'male') ||
 			(activeFilters.gender.female && pet.gender === 'female');
 		
-        const ageMatches = allAgeFiltersFalse ||
-            (activeFilters.age.underOne && years < 1) ||
-            (activeFilters.age.oneToFive && years >= 1 && years <= 5) ||
-            (activeFilters.age.fiveToTen && years > 5 && years <= 10) ||
-            (activeFilters.age.overTen && years > 10);
-
-        return typeMatches && ageMatches && genderMatches;
-    });
+		const ageMatches = allAgeFiltersFalse ||
+			(activeFilters.age.underOne && years < 1) || 
+			(activeFilters.age.oneToFive && years >= 1 && years <= 5) ||
+			(activeFilters.age.fiveToTen && years > 5 && years <= 10) ||
+			(activeFilters.age.overTen && years > 10);
+	
+		return typeMatches && ageMatches && genderMatches;
+	});
+	
 
 
 
